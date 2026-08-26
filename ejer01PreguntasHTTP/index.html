@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Preguntas HTTP</title>
+</head>
+<body>
+
+<header>
+    <h1>Preguntas y referencias sobre protocolo HTTP</h1>
+</header>
+
+<hr>
+
+<section>
+    <h2>Sección de referencias de interés</h2>
+    <p>Abrir enlaces en nuevas pestañas</p>
+    <nav>
+        <ul>
+            <li><a href="https://developer.mozilla.org/es/docs/Web/HTTP" target="_blank" rel="noopener">Mozilla (MDN) - Guía de HTTP</a></li>
+            <li><a href="https://www.cloudflare.com/es-es/learning/ddos/glossary/hypertext-transfer-protocol-http/" target="_blank" rel="noopener">Cloudflare - Qué es HTTP</a></li>
+            <li><a href="https://www.rfc-editor.org/rfc/rfc9110.html" target="_blank" rel="noopener">RFC 9110 - HTTP Semantics (IETF)</a></li>
+        </ul>
+    </nav>
+</section>
+
+<hr>
+
+<section>
+    <h2>Sección de Preguntas sobre HTTP</h2>
+    <hr>
+    <ul>
+        <li>
+            <p><strong>Pregunta nro 1</strong></p>
+            <p>¿Sobre qué protocolo binario está montado el protocolo HTTP?</p>
+            <p>Respuesta: HTTP viaja montado sobre TCP (Transmission Control Protocol), que arma los datos en paquetes binarios y garantiza que lleguen completos y en orden entre cliente y servidor. TCP, a su vez, corre sobre IP.</p>
+        </li>
+        <li>
+            <p><strong>Pregunta nro 2</strong></p>
+            <p>¿Cuáles son los clientes HTTP y los servidores HTTP más utilizados?</p>
+            <p>Respuesta: Como clientes: los navegadores (Chrome, Firefox, Edge, Safari), CURL y las librerías nativas de los lenguajes de programación (fetch en JavaScript, requests en Python, etc.). Como servidores: Apache, Nginx e IIS son los más usados.</p>
+        </li>
+        <li>
+            <p><strong>Pregunta nro 3</strong></p>
+            <p>¿Qué verbos admite un comando en el requerimiento HTTP?</p>
+            <p>Respuesta: Los principales son GET (leer un recurso), POST (enviar/actualizar datos), PUT (crear un recurso) y DELETE (borrar un recurso). También existe CONNECT, usado por los proxys.</p>
+        </li>
+        <li>
+            <p><strong>Pregunta nro 4</strong></p>
+            <p>¿Qué contenido lleva el body de un requerimiento HTTP?</p>
+            <p>Respuesta: Puede llevar datos ingresados en los campos de un formulario o archivos enviados en un proceso de upload. En general puede ser cualquier tipo de dato (texto, JSON, binario, etc.), según lo indique el header Content-Type.</p>
+        </li>
+        <li>
+            <p><strong>Pregunta nro 5</strong></p>
+            <p>¿Qué diferencia existe entre una URL y una URI?</p>
+            <p>Respuesta: La URI (Uniform Resource Identifier) es el identificador del recurso dentro del servidor, por ejemplo /clientes/marta. La URL (Uniform Resource Locator) es la dirección completa que incluye protocolo, host, dominio y puerto además de la URI, por ejemplo http://miempresa.midominio:8080/clientes/marta.</p>
+        </li>
+        <li>
+            <p><strong>Pregunta nro 6</strong></p>
+            <p>¿Cómo se almacena información relacionada con las respuestas HTTP?</p>
+            <p>Respuesta: Se almacena como cache en el navegador. Los headers de la respuesta (Cache-control, Expires, Last-Modified, ETag) le indican al cliente si puede guardar el recurso y por cuánto tiempo, para no tener que volver a pedirlo al servidor.</p>
+        </li>
+        <li>
+            <p><strong>Pregunta nro 7</strong></p>
+            <p>¿Qué significa HTTP sobre conexiones preexistentes?</p>
+            <p>Respuesta: Significa que el cliente reutiliza la misma conexión TCP ya abierta para pedir varios recursos seguidos (header Connection: keep-alive), en lugar de abrir y cerrar una conexión nueva por cada requerimiento. Esto hace la comunicación más rápida.</p>
+        </li>
+        <li>
+            <p><strong>Pregunta nro 8</strong></p>
+            <p>¿Qué significa Virtual Hosting?</p>
+            <p>Respuesta: Es la capacidad de un servidor web de atender múltiples dominios distintos usando una sola dirección IP, identificando a cuál sitio corresponde cada pedido gracias al header Host que envía el navegador.</p>
+        </li>
+        <li>
+            <p><strong>Pregunta nro 9</strong></p>
+            <p>¿Qué significa Cache por ETag?</p>
+            <p>Respuesta: Es un sistema de cache donde el servidor asigna a cada recurso una etiqueta única (ETag) que cambia cada vez que el recurso se modifica. El navegador la guarda y la envía en el próximo pedido (header If-None-Match); si no cambió, el servidor responde "304 Not Modified" y el navegador usa la copia que ya tiene, ahorrando ancho de banda.</p>
+        </li>
+        <li>
+            <p><strong>Pregunta nro 10</strong></p>
+            <p>¿Por qué el HTTP se considera STATE LESS?</p>
+            <p>Respuesta: Porque cada requerimiento es independiente: el servidor no recuerda nada de los pedidos anteriores del mismo cliente. Al terminar la conexión se pierde cualquier estado, salvo que se use algo adicional (como cookies o sesiones) para simular que el servidor "recuerda" al usuario.</p>
+        </li>
+        <li>
+            <p><strong>Pregunta nro 11</strong></p>
+            <p>¿Qué nueva versión de HTTP se está usando para mejorar la velocidad de la web?</p>
+            <p>Respuesta: HTTP/2 (desde 2015), que usa mensajes binarios, multiplexa pedidos y respuestas, comprime los headers y prioriza recursos. Más recientemente, HTTP/3 (2019), montado sobre QUIC/UDP en lugar de TCP.</p>
+        </li>
+        <li>
+            <p><strong>Pregunta nro 12</strong></p>
+            <p>¿Cómo va a mejorar el comportamiento de una aplicación web en ambientes ruidosos o de débil conexión?</p>
+            <p>Respuesta: Con HTTP/3, que al usar QUIC sobre UDP en lugar de TCP logra reconectarse mucho más rápido cuando hay cortes o pérdida de paquetes (por ruido, mala señal o mucho tráfico), sin tener que rearmar toda la conexión desde cero. Mejora la reconexión más que la velocidad pura de transmisión.</p>
+        </li>
+    </ul>
+</section>
+
+<hr>
+
+<section>
+    <h2>Sección de imágenes representativas del protocolo</h2>
+    <p>En esta sección mostramos una imagen representativa del ciclo de solicitud y respuesta del protocolo HTTP.</p>
+    <img src="request-response.svg" alt="Diagrama del ciclo de solicitud (request) y respuesta (response) entre un cliente y un servidor HTTP" width="600">
+</section>
+
+<hr>
+
+<section>
+    <h2>Sección de videos representativos del protocolo</h2>
+    <p>En esta sección mostramos un video representativo del protocolo HTTP.</p>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/70fwt29crLs" title="Qué es el Protocolo HTTP y para qué lo utilizamos" frameborder="0" allowfullscreen></iframe>
+</section>
+
+<hr>
+
+<footer>
+    <h2>Datos del alumno</h2>
+    <p><em>Axel Flores</em></p>
+</footer>
+
+</body>
+</html>

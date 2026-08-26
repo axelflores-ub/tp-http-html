@@ -1,0 +1,44 @@
+<svg viewBox="0 0 640 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagrama del ciclo de solicitud y respuesta HTTP entre cliente y servidor">
+  <style>
+    text { font-family: Arial, Helvetica, sans-serif; }
+  </style>
+
+  <!-- Cliente -->
+  <g>
+    <rect x="20" y="40" width="90" height="60" rx="4" fill="#dbeafe" stroke="#1e3a8a" stroke-width="2"/>
+    <rect x="35" y="50" width="60" height="34" fill="#1e3a8a"/>
+    <rect x="50" y="100" width="30" height="8" fill="#1e3a8a"/>
+    <text x="65" y="130" text-anchor="middle" font-size="14" fill="#111827">Cliente</text>
+  </g>
+
+  <!-- Servidor -->
+  <g>
+    <rect x="530" y="30" width="70" height="90" rx="4" fill="#fef3c7" stroke="#92400e" stroke-width="2"/>
+    <rect x="540" y="42" width="50" height="10" fill="#92400e"/>
+    <rect x="540" y="58" width="50" height="10" fill="#92400e"/>
+    <rect x="540" y="74" width="50" height="10" fill="#92400e"/>
+    <rect x="540" y="90" width="50" height="10" fill="#92400e"/>
+    <text x="565" y="140" text-anchor="middle" font-size="14" fill="#111827">Servidor</text>
+  </g>
+
+  <!-- Linea de tiempo cliente -->
+  <line x1="65" y1="130" x2="65" y2="240" stroke="#9ca3af" stroke-width="2"/>
+  <!-- Linea de tiempo servidor -->
+  <line x1="565" y1="140" x2="565" y2="240" stroke="#9ca3af" stroke-width="2"/>
+
+  <!-- Flecha request -->
+  <line x1="70" y1="170" x2="555" y2="170" stroke="#111827" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="230" y="150" width="120" height="34" rx="6" fill="#fecaca" stroke="#7f1d1d"/>
+  <text x="290" y="171" text-anchor="middle" font-size="13" fill="#111827">Request (GET /)</text>
+
+  <!-- Flecha response -->
+  <line x1="555" y1="210" x2="70" y2="210" stroke="#111827" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="220" y="192" width="140" height="34" rx="6" fill="#bbf7d0" stroke="#14532d"/>
+  <text x="290" y="213" text-anchor="middle" font-size="13" fill="#111827">Response (200 OK)</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#111827"/>
+    </marker>
+  </defs>
+</svg>

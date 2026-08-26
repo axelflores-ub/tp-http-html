@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>ejer04Iframe</title>
+<script>
+    function mostrarEn(url) {
+        document.getElementById('miIframe').src = url;
+    }
+</script>
+</head>
+<body>
+
+<h1>INDICE</h1>
+<ol>
+    <li><a href="#" onclick="mostrarEn('../ejer01PreguntasHTTP/index.html'); return false;">Html básico</a></li>
+    <li><a href="#" onclick="mostrarEn('../ejer02Tablas/index.html'); return false;">Tabla</a></li>
+    <li><a href="#" onclick="mostrarEn('../ejer03Formularios/index.html'); return false;">Formulario</a></li>
+    <li><a href="#" onclick="mostrarEn('http.pdf'); return false;">Archivo pdf</a></li>
+    <li><a href="#" onclick="mostrarEn('Wildlife.mp4'); return false;">Archivo de video local</a></li>
+    <li><a href="#" onclick="mostrarEn('https://www.youtube.com/embed/70fwt29crLs'); return false;">Video de youtube</a></li>
+</ol>
+
+<h2>Iframe para presentar los ejercicios anteriores, un pdf y un video streaming de youtube</h2>
+<iframe id="miIframe" src="../ejer01PreguntasHTTP/index.html" width="900" height="500" style="border:1px solid black;"></iframe>
+
+<h2>Iframe recomendado por youtube para insertar un video y visualizarlo en toda su dimensión</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/DT8ddet83OM" title="Comprendiendo el protocolo HTTP" frameborder="0" allowfullscreen></iframe>
+
+<hr>
+<p><a href="../index.html">Volver al índice anterior</a></p>
+<p><a href="../../index.html">Volver al índice principal</a></p>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Formulario ejer03Formularios</title>
+</head>
+<body>
+
+<h1>Formulario de inscripción</h1>
+
+<form action="respuestaFormulario.html" method="get">
+
+    <h2>Datos personales</h2>
+    <ul>
+        <li>
+            <label for="nombre">Nombre:</label><br>
+            <input type="text" id="nombre" name="nombre" required>
+        </li>
+        <li>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required>
+        </li>
+        <li>
+            <label for="edad">Edad:</label><br>
+            <input type="number" id="edad" name="edad" min="0" max="120">
+        </li>
+    </ul>
+
+    <h2>Preferencias</h2>
+    <ul>
+        <li>
+            <label>Sexo:</label><br>
+            <input type="radio" id="masculino" name="sexo" value="masculino">
+            <label for="masculino">Masculino</label>
+            <input type="radio" id="femenino" name="sexo" value="femenino">
+            <label for="femenino">Femenino</label>
+        </li>
+        <li>
+            <label for="curso">Curso al que te inscribís:</label><br>
+            <select id="curso" name="curso">
+                <option value="html">HTML</option>
+                <option value="css">CSS</option>
+                <option value="javascript">JavaScript</option>
+                <option value="php">PHP</option>
+            </select>
+        </li>
+        <li>
+            <input type="checkbox" id="novedades" name="novedades">
+            <label for="novedades">Quiero recibir novedades por email</label>
+        </li>
+    </ul>
+
+    <button type="submit">Enviar</button>
+
+</form>
+
+</body>
+</html>
