@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>css30LayoutBasico</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    header, footer {
+        background-color: #5c6773;
+        color: #ffffff;
+        padding: 16px;
+        font-weight: bold;
+    }
+
+    .layout {
+        display: flex;
+        flex: 1;
+    }
+
+    .menu {
+        background-color: #ffd8c2;
+        width: 220px;
+        flex-shrink: 0;
+        padding: 20px;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    .menu h2 {
+        margin-top: 0;
+    }
+
+    .menu button {
+        display: block;
+        width: 100%;
+        margin-bottom: 12px;
+        padding: 10px;
+        background-color: #e6e6e6;
+        border: 1px solid #bbbbbb;
+        cursor: pointer;
+        font-weight: bold;
+    }
+    .menu button:hover {
+        background-color: #cfcfcf;
+    }
+    .menu button:disabled {
+        color: #999999;
+        cursor: not-allowed;
+    }
+
+    .contenido {
+        flex: 1;
+        background-color: #f7f7f7;
+    }
+
+    .contenido iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+        display: block;
+    }
+</style>
+<script>
+    function mostrarEn(url) {
+        document.getElementById('marco').src = url;
+    }
+</script>
+</head>
+<body>
+
+<header>Título principal de página</header>
+
+<div class="layout">
+    <nav class="menu">
+        <h2>Menu</h2>
+        <button onclick="mostrarEn('../../../Html/index.html')">HTML</button>
+        <button onclick="mostrarEn('../../index.html')">CSS</button>
+        <button disabled title="Todavía no hay ejercicios">JSCRIPT</button>
+        <button disabled title="Todavía no hay ejercicios">PHP</button>
+    </nav>
+    <main class="contenido">
+        <iframe id="marco" src="contenidoInicial.html"></iframe>
+    </main>
+</div>
+
+<footer>Pie de página</footer>
+
+</body>
+</html>

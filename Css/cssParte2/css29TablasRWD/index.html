@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Tabla RWD para datos</title>
+<style>
+    body {
+        margin: 0;
+        background-color: #ffffff;
+        font-family: Arial, sans-serif;
+        font-size: 16px; /* tamaño base, cambia con @media más abajo */
+    }
+
+    .titulo {
+        background-color: #e4defc;
+        color: #4527a0;
+        text-align: center;
+        font-weight: bold;
+        padding: 16px;
+    }
+
+    /* Este contenedor es el que tiene el alto fijo y el scroll vertical.
+       El thead usa position:sticky, así que aunque el contenedor scrollee,
+       el encabezado se queda pegado arriba: el scroll "se siente" solo en el tbody. */
+    .contenedorTabla {
+        max-height: 420px;
+        overflow-y: auto;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    thead th {
+        position: sticky;
+        top: 0;
+        background-color: #ffd7a8;
+        color: #6a3d00;
+        text-transform: uppercase;
+        padding: 10px;
+        text-align: left;
+    }
+
+    tbody td {
+        padding: 8px 10px;
+        border-bottom: 1px solid #d8e6f0;
+    }
+
+    tbody tr:nth-child(odd) {
+        background-color: #eaf4fb;
+    }
+    tbody tr:nth-child(even) {
+        background-color: #ffffff;
+    }
+
+    .pie {
+        background-color: #cfd8dc;
+        color: #37474f;
+        text-align: center;
+        padding: 14px;
+    }
+
+    /* El tamaño de letra baja a medida que la ventana se achica,
+       y además se van ocultando las columnas menos importantes */
+    @media (max-width: 900px) {
+        body { font-size: 13px; }
+        table th:nth-child(6), table td:nth-child(6) { display: none; } /* Skype */
+    }
+    @media (max-width: 600px) {
+        body { font-size: 11px; }
+        table th:nth-child(5), table td:nth-child(5) { display: none; } /* Twitter */
+    }
+    @media (max-width: 420px) {
+        table th:nth-child(3), table td:nth-child(3) { display: none; } /* Mail */
+    }
+</style>
+</head>
+<body>
+
+<div class="titulo">RWD (Responsive Web Design) TABLE</div>
+
+<div class="contenedorTabla">
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nick</th>
+                <th>Mail</th>
+                <th>Web</th>
+                <th>Twitter</th>
+                <th>Skype</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>1</td><td>Ana</td><td>ana@correo.com</td><td>http://ana.dev</td><td>@ana</td><td>ana.skype</td></tr>
+            <tr><td>2</td><td>Bruno</td><td>bruno@correo.com</td><td>http://bruno.ar</td><td>@bruno</td><td>bruno.skype</td></tr>
+            <tr><td>3</td><td>Carla</td><td>carla@correo.com</td><td>http://carla.net</td><td>@carla</td><td>carla.skype</td></tr>
+            <tr><td>4</td><td>Diego</td><td>diego@correo.com</td><td>http://diego.music</td><td>@diego</td><td>diego.skype</td></tr>
+            <tr><td>5</td><td>Elena</td><td>elena@correo.com</td><td>http://elena.com.ar</td><td>@elena</td><td>elena.skype</td></tr>
+            <tr><td>6</td><td>Fabián</td><td>fabian@correo.com</td><td>http://fabian.com</td><td>@fabian</td><td>fabian.skype</td></tr>
+            <tr><td>7</td><td>Gaby</td><td>gaby@correo.com</td><td>http://gaby.dev</td><td>@gaby</td><td>gaby.skype</td></tr>
+            <tr><td>8</td><td>Hugo</td><td>hugo@correo.com</td><td>http://hugo.ar</td><td>@hugo</td><td>hugo.skype</td></tr>
+            <tr><td>9</td><td>Iván</td><td>ivan@correo.com</td><td>http://ivan.net</td><td>@ivan</td><td>ivan.skype</td></tr>
+            <tr><td>10</td><td>Julia</td><td>julia@correo.com</td><td>http://julia.music</td><td>@julia</td><td>julia.skype</td></tr>
+            <tr><td>11</td><td>Karen</td><td>karen@correo.com</td><td>http://karen.com.ar</td><td>@karen</td><td>karen.skype</td></tr>
+            <tr><td>12</td><td>Leo</td><td>leo@correo.com</td><td>http://leo.com</td><td>@leo</td><td>leo.skype</td></tr>
+            <tr><td>13</td><td>Mora</td><td>mora@correo.com</td><td>http://mora.dev</td><td>@mora</td><td>mora.skype</td></tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="pie">Pie</div>
+
+</body>
+</html>

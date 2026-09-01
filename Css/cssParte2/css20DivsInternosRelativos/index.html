@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>css20DivsInternosRelativos</title>
+<style>
+    body {
+        background-color: #cfe0fc;
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    .contenido {
+        max-width: 900px;
+        background-color: #fdf6ec;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    /* position:relative permite desplazar la caja sin sacarla del flujo normal del documento,
+       dejando "el hueco" donde estaba y superponiéndola sobre lo que sigue */
+    .clase1 {
+        position: relative;
+        background-color: #8fcf8f;
+        padding: 16px;
+        margin-bottom: 4px;
+    }
+    .clase1.desplazada {
+        top: -6px;
+    }
+
+    .clase2 {
+        position: relative;
+        background-color: #fff3b0;
+        width: 55%;
+        padding: 10px;
+        margin-bottom: 4px;
+    }
+
+    .clase3 {
+        position: relative;
+        background-color: #d9a679;
+        width: 60%;
+        height: 130px;
+        overflow-y: scroll;
+        padding: 10px;
+        top: -30px;
+        left: 90px;
+        box-sizing: border-box;
+    }
+    .clase3 .ultimaLinea {
+        background-color: #f4a261;
+        display: inline-block;
+    }
+
+    /* position:fixed saca la caja del flujo y la ubica respecto de la ventana (viewport),
+       no se mueve aunque se haga scroll de la página */
+    .modal {
+        position: fixed;
+        top: 220px;
+        left: 260px;
+        width: 380px;
+        height: 240px;
+        background-color: rgba(120, 130, 200, 0.55); /* transparencia con rgba */
+        color: #ffffff;
+        padding: 12px;
+        z-index: 10; /* por encima del resto de los contenedores */
+        overflow: hidden;
+        box-sizing: border-box;
+        border-radius: 8px;
+    }
+
+    .glow {
+        text-align: center;
+        font-family: 'Comic Sans MS', cursive;
+        font-size: 1.8em;
+        color: #ffffff;
+        text-shadow:
+            0 0 5px #ff8fd1,
+            0 0 10px #ff8fd1,
+            0 0 18px #ff5fb8,
+            0 0 30px #ff2fa0;
+        margin-top: 40px;
+        padding-bottom: 60px;
+    }
+</style>
+</head>
+<body>
+
+<div class="contenido">
+    <h1>Contenedores relativos</h1>
+
+    <div class="clase1">Contenedor relativo clase1</div>
+    <div class="clase1 desplazada">Contenedor relativo clase1, desplazado 6px hacia arriba con top:-6px</div>
+
+    <div class="clase2">Contenedor relativo clase2</div>
+    <div class="clase2">
+        Contenedor relativo clase2<br>
+        Contenedor relativo clase2<br>
+        Contenedor relativo clase2<br>
+        Contenedor relativo clase2
+    </div>
+
+    <div class="clase3">
+        <strong>Contenedor relativo clase3</strong><br>
+        texto texto texto texto<br>
+        texto texto texto texto<br>
+        texto texto texto texto<br>
+        texto texto texto texto<br>
+        <span class="ultimaLinea">texto texto texto texto</span>
+    </div>
+
+    <div class="clase2">
+        Contenedor relativo clase2<br>
+        Contenedor relativo clase2<br>
+        Contenedor relativo clase2
+    </div>
+</div>
+
+<div class="modal">
+    Contenedor Modal<br>
+    Contenedor Modal<br>
+    Contenedor Modal<br>
+    Contenedor Modal<br>
+    Contenedor Modal<br>
+    Contenedor Modal<br>
+    Contenedor Modal<br>
+    Contenedor Modal
+</div>
+</body>
+</html>

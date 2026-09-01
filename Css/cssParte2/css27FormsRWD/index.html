@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>css27 Forms RWD</title>
+<style>
+    body {
+        margin: 0;
+        background-color: #ffffff;
+        font-family: Arial, sans-serif;
+    }
+
+    .header, .footer {
+        background-color: #17847c;
+        color: #ffffff;
+        text-align: center;
+        font-weight: bold;
+        padding: 16px;
+    }
+
+    /* El formulario NO tiene alto fijo ni overflow forzado: crece con el contenido.
+       Si algún día hay demasiados campos como para no entrar en la pantalla,
+       lo que aparece es el scroll normal de la página, no una barra propia siempre visible. */
+    .formulario {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    @media (max-width: 1199px) {
+        .formulario { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 799px) {
+        .formulario { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 499px) {
+        .formulario { grid-template-columns: 1fr; }
+    }
+
+    .campo {
+        background-color: #d9d9d9;
+        border: 1px solid #ffffff;
+        padding: 14px;
+        box-sizing: border-box;
+    }
+
+    .campo label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 6px;
+    }
+
+    .campo input[type="text"],
+    .campo input[type="password"],
+    .campo input[type="date"],
+    .campo select {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .botonera {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        background-color: #4d4d4d;
+        padding: 20px;
+    }
+
+    .botonera button {
+        padding: 10px 40px;
+        font-size: 1em;
+        background-color: #d9d9d9;
+        border: 1px solid #999999;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+
+<div class="header">Formulario</div>
+
+<form class="formulario">
+
+    <div class="campo">
+        <label for="apellido">1 Apellido:</label>
+        <input type="text" id="apellido" name="apellido">
+    </div>
+
+    <div class="campo">
+        <label for="nombres">2 Nombres:</label>
+        <input type="text" id="nombres" name="nombres">
+    </div>
+
+    <div class="campo">
+        <label for="contrasena">3 Contraseña:</label>
+        <input type="password" id="contrasena" name="contrasena">
+    </div>
+
+    <div class="campo">
+        <label for="deshabilitado">4 Campo deshabilitado:</label>
+        <input type="text" id="deshabilitado" value="valor deshabilitado" disabled>
+    </div>
+
+    <div class="campo">
+        <label for="fecha">5 Fecha</label>
+        <input type="date" id="fecha" name="fecha">
+    </div>
+
+    <div class="campo">
+        <label for="dni">6 DNI:</label>
+        <input type="text" id="dni" name="dni">
+    </div>
+
+    <div class="campo">
+        <label>7 Actividades extracurriculares</label>
+        <input type="checkbox" id="musica" name="actividades"> <label for="musica" style="display:inline;font-weight:normal;">Música:</label><br>
+        <input type="checkbox" id="pintura" name="actividades"> <label for="pintura" style="display:inline;font-weight:normal;">Pintura artística:</label><br>
+        <input type="checkbox" id="deportes" name="actividades"> <label for="deportes" style="display:inline;font-weight:normal;">Deportes:</label>
+    </div>
+
+    <div class="campo">
+        <label>8 Sexo:</label>
+        <input type="radio" id="masculino" name="sexo"> <label for="masculino" style="display:inline;font-weight:normal;">Masculino:</label><br>
+        <input type="radio" id="femenino" name="sexo"> <label for="femenino" style="display:inline;font-weight:normal;">Femenino:</label>
+    </div>
+
+    <div class="campo">
+        <label>9 Vacío</label>
+    </div>
+
+    <div class="campo">
+        <label for="estudios">10 Estudios cursados</label>
+        <select id="estudios" name="estudios">
+            <option>Primarios</option>
+            <option>Secundarios</option>
+            <option>Terciarios</option>
+            <option>Universitarios</option>
+        </select>
+    </div>
+
+    <div class="campo">
+        <label for="area">11 Área de desempeño</label>
+        <select id="area" name="area">
+            <option>Administración</option>
+            <option>Producción</option>
+            <option>Sistemas</option>
+        </select>
+    </div>
+
+    <div class="campo">
+        <label for="turno">12 Turno</label>
+        <select id="turno" name="turno">
+            <option>Mañana</option>
+            <option>Tarde</option>
+            <option>Noche</option>
+        </select>
+    </div>
+
+    <div class="campo">
+        <label>13 Conduce</label>
+        <input type="radio" id="conduceSi" name="conduce"> <label for="conduceSi" style="display:inline;font-weight:normal;">SI</label>
+        <input type="radio" id="conduceNo" name="conduce"> <label for="conduceNo" style="display:inline;font-weight:normal;">No</label>
+    </div>
+
+</form>
+
+<div class="botonera">
+    <button type="submit">Enviar</button>
+    <button type="reset">Reset</button>
+</div>
+
+<div class="footer">Pie de formulario</div>
+
+</body>
+</html>

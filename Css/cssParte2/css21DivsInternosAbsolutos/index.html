@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>css21DivsInternosAbsolutos</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    h1 {
+        padding: 16px;
+        margin: 0;
+        background-color: #fdf6ec;
+    }
+
+    /* El lienzo es el contenedor de referencia (position:relative) para los hijos absolutos */
+    .lienzo {
+        position: relative;
+        width: 100%;
+        height: 700px;
+        background: linear-gradient(to bottom, #bfe3f5, #6b7280);
+        overflow: hidden;
+    }
+
+    /* Todas las coordenadas de los internos están en % en vez de px:
+       así, si el lienzo cambia de tamaño, los internos se reacomodan proporcionalmente */
+    .interno {
+        position: absolute;
+        padding: 12px;
+        box-sizing: border-box;
+    }
+
+    .interno1 {
+        top: 8%;
+        left: 8%;
+        width: 34%;
+        background-color: #7fe8c0;
+    }
+
+    .interno3 {
+        top: 30%;
+        left: 24%;
+        width: 30%;
+        background-color: rgba(90, 90, 90, 0.6);
+        color: #ffffff;
+    }
+
+    .interno2 {
+        bottom: 8%;
+        left: 42%;
+        width: 40%;
+        background-color: #b6e388;
+        transform: rotate(-8deg);
+        display: flex;
+        gap: 6px;
+        align-items: center;
+    }
+    .interno2 .etiqueta {
+        position: absolute;
+        top: -24px;
+        left: 6px;
+        font-weight: bold;
+        color: #2d6a4f;
+        white-space: nowrap;
+    }
+    .interno2 img {
+        width: 33%;
+        border: 3px solid #ffffff;
+    }
+    .interno2 img:nth-child(2) { transform: rotate(4deg); }
+    .interno2 img:nth-child(3) { transform: rotate(-5deg); }
+    .interno2 img:nth-child(4) { transform: rotate(7deg); }
+</style>
+</head>
+<body>
+
+<h1>Estructura de posicionamiento absoluto pero adaptable al medio de presentación</h1>
+
+<div class="lienzo">
+
+    <div class="interno interno1">
+        <strong>Contenedor interno 1.</strong>
+        <p>Este contenedor usa position:absolute con top, left y width definidos en porcentaje. Al estar en porcentaje, su ubicación y tamaño se recalculan proporcionalmente si cambia el tamaño del contenedor padre.</p>
+    </div>
+
+    <div class="interno interno3">
+        <strong>Contenedor interno 3.</strong>
+        <p>Este contenedor también usa coordenadas en porcentaje, y se superpone parcialmente al contenedor interno 1 gracias al position:absolute.</p>
+    </div>
+
+    <div class="interno interno2">
+        <span class="etiqueta">Contenedor interno 2</span>
+        <img src="castillo.svg" alt="Castillo">
+        <img src="castillo.svg" alt="Castillo">
+        <img src="castillo.svg" alt="Castillo">
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Caja flexible</title>
+<style>
+    body {
+        margin: 0;
+        background-color: #fdf6ec;
+    }
+
+    /* Caja flexible: envuelve (flex-wrap) y centra tanto horizontal (justify-content)
+       como verticalmente (align-items dentro de cada fila, align-content entre filas) */
+    .galeria {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        gap: 24px;
+        min-height: 100vh;
+        padding: 40px;
+        box-sizing: border-box;
+    }
+
+    .galeria img {
+        width: 260px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 8px;
+        box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+    }
+
+    /* Misma imagen, recoloreada con filter:hue-rotate para variar sin necesitar más archivos */
+    .galeria img:nth-child(2) { filter: hue-rotate(60deg); }
+    .galeria img:nth-child(3) { filter: hue-rotate(140deg); }
+    .galeria img:nth-child(4) { filter: hue-rotate(220deg); }
+    .galeria img:nth-child(5) { filter: hue-rotate(300deg); }
+</style>
+</head>
+<body>
+
+<div class="galeria">
+    <img src="flor.svg" alt="Flor 1">
+    <img src="flor.svg" alt="Flor 2">
+    <img src="flor.svg" alt="Flor 3">
+    <img src="flor.svg" alt="Flor 4">
+    <img src="flor.svg" alt="Flor 5">
+</div>
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Menu</title>
+<style>
+    body {
+        margin: 0;
+        background-color: #ffffff;
+        font-family: Arial, sans-serif;
+    }
+
+    /* Menú armado con <ul> anidados: la lista principal, y dentro de cada <li>
+       que tiene submenú, otra <ul> con sus propios <li> */
+    .menu, .menu ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .menu {
+        display: flex;
+        background-color: #234a8c;
+    }
+
+    .menu > li {
+        position: relative;
+    }
+
+    .menu > li > a {
+        display: block;
+        padding: 14px 22px;
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .menu > li:hover > a {
+        background-color: #16305c;
+    }
+
+    /* El submenú arranca oculto... */
+    .menu .submenu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #2f5aa8;
+        min-width: 170px;
+        z-index: 5;
+    }
+
+    /* ...y se muestra solo cuando el mouse está sobre el <li> padre (selector :hover) */
+    .menu > li:hover > .submenu {
+        display: block;
+    }
+
+    .submenu li a {
+        display: block;
+        padding: 10px 16px;
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    .submenu li a:hover {
+        background-color: #1c3d75;
+    }
+</style>
+</head>
+<body>
+
+<ul class="menu">
+    <li><a href="../../../Html/index.html">HTML</a>
+        <ul class="submenu">
+            <li><a href="../../../Html/ejer02Tablas/index.html">Tablas</a></li>
+            <li><a href="../../../Html/ejer03Formularios/index.html">Forms</a></li>
+            <li><a href="../../../Html/ejer04Iframe/index.html">Iframes</a></li>
+        </ul>
+    </li>
+    <li><a href="../../index.html">CSS</a>
+        <ul class="submenu">
+            <li><a href="../../cssParte1/css01StyleEnHeader/index.html">Style en el header</a></li>
+            <li><a href="../../cssParte1/css02SelectoresDeClase/index.html">Selector de clase</a></li>
+            <li><a href="../../cssParte1/css03StyleEnFile/index.html">Style en file</a></li>
+        </ul>
+    </li>
+    <li><a href="#">JScript</a></li>
+    <li><a href="#">Especiales</a></li>
+    <li><a href="#">PHP</a></li>
+</ul>
+
+</body>
+</html>

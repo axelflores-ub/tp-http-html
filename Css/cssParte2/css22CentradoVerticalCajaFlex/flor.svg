@@ -1,0 +1,13 @@
+<svg viewBox="0 0 260 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flor ilustrada sobre fondo celeste">
+  <rect width="260" height="200" fill="#bfe3f5"/>
+  <rect x="0" y="150" width="260" height="50" fill="#8fc76b"/>
+  <path d="M130,150 L130,90" stroke="#4f9a4f" stroke-width="6" fill="none"/>
+  <g>
+    <circle cx="130" cy="70" r="22" fill="#f4a6c1"/>
+    <circle cx="105" cy="90" r="22" fill="#f4a6c1"/>
+    <circle cx="155" cy="90" r="22" fill="#f4a6c1"/>
+    <circle cx="112" cy="55" r="22" fill="#f7c948"/>
+    <circle cx="148" cy="55" r="22" fill="#f7c948"/>
+    <circle cx="130" cy="75" r="14" fill="#e0a020"/>
+  </g>
+</svg>

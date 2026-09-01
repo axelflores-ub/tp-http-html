@@ -1,0 +1,10 @@
+<svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Castillo bajo el cielo">
+  <rect width="200" height="150" fill="#cdeafd"/>
+  <rect x="60" y="70" width="80" height="55" fill="#9fa8c9"/>
+  <rect x="60" y="55" width="16" height="20" fill="#7b85ab"/>
+  <polygon points="60,55 68,40 76,55" fill="#5c6690"/>
+  <rect x="124" y="55" width="16" height="20" fill="#7b85ab"/>
+  <polygon points="124,55 132,40 140,55" fill="#5c6690"/>
+  <rect x="93" y="90" width="14" height="35" fill="#5c6690"/>
+  <rect x="0" y="125" width="200" height="25" fill="#8fc76b"/>
+</svg>
