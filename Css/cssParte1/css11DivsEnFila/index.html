@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>css11DivsEnFila</title>
+<style>
+    body {
+        background-color: #ffffff;
+        color: #222222;
+    }
+
+    .fila {
+        display: flex;
+        gap: 14px;
+        background-color: #bde0e8;
+        padding: 14px;
+        border-radius: 8px;
+        overflow-x: auto;
+    }
+
+    .caja {
+        width: 140px;
+        height: 110px;
+        flex-shrink: 0;
+        border-radius: 10px;
+        box-shadow: 2px 2px 6px rgba(0,0,0,0.25);
+        box-sizing: border-box;
+    }
+
+    .texto {
+        background-color: #ffd6d6;
+        padding: 8px;
+        text-align: center;
+        overflow-y: auto;
+        font-size: 0.95em;
+    }
+
+    .imagen {
+        background-size: cover;
+        background-position: center;
+    }
+
+    .imagen1 {
+        background-image: url('lago.svg');
+    }
+
+    .imagen2 {
+        background-image: url('castillo.svg');
+    }
+
+    .titulo {
+        text-align: center;
+        margin-top: 60px;
+        font-family: 'Brush Script MT', cursive;
+        font-size: 3em;
+        color: #ffffff;
+        text-shadow:
+            0 0 5px #4dd0e1,
+            0 0 10px #4dd0e1,
+            0 0 20px #26c6da,
+            0 0 35px #00acc1;
+    }
+</style>
+</head>
+<body>
+
+<div class="fila">
+    <div class="caja texto">Texto en caja 1, con más contenido del que entra, así que aparece scroll vertical. Texto. Texto. Texto. Texto. Texto.</div>
+    <div class="caja texto">Texto en caja 2</div>
+    <div class="caja imagen imagen1"></div>
+    <div class="caja imagen imagen2"></div>
+    <div class="caja texto">Texto en caja 5</div>
+</div>
+
+<h1 class="titulo">Divs en fila</h1>
+
+</body>
+</html>

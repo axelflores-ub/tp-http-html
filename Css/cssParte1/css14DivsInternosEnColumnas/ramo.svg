@@ -1,0 +1,17 @@
+<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ramo de flores">
+  <rect width="300" height="200" fill="#fef9f0"/>
+  <g>
+    <circle cx="90" cy="80" r="26" fill="#e05a7e"/>
+    <circle cx="150" cy="60" r="30" fill="#f2a640"/>
+    <circle cx="210" cy="85" r="26" fill="#e05a7e"/>
+    <circle cx="120" cy="110" r="24" fill="#f7c948"/>
+    <circle cx="180" cy="115" r="24" fill="#c96fd6"/>
+    <circle cx="90" cy="80" r="8" fill="#7a1f37"/>
+    <circle cx="150" cy="60" r="9" fill="#8a4b00"/>
+    <circle cx="210" cy="85" r="8" fill="#7a1f37"/>
+    <circle cx="120" cy="110" r="7" fill="#8a6a00"/>
+    <circle cx="180" cy="115" r="7" fill="#5c1f66"/>
+  </g>
+  <path d="M150,135 L150,200" stroke="#4f9a4f" stroke-width="6" fill="none"/>
+  <path d="M130,190 L150,175 L170,190" stroke="#4f9a4f" stroke-width="5" fill="none"/>
+</svg>

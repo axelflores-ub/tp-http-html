@@ -1,0 +1,16 @@
+body {
+    background-color: #f8fafc;
+}
+
+h1 {
+    text-align: center;
+    background-color: #fff2cc;
+    color: #b06a1f;
+    padding: 14px;
+}
+
+p {
+    font-style: italic;
+    color: #4a7c7c;
+    font-size: 1.1em;
+}

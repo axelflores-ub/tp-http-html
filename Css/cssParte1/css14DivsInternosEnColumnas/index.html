@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>css14DivsInternosEnColumnas</title>
+<style>
+    body {
+        background-color: #ffffff;
+        color: #222222;
+    }
+
+    .columnas {
+        column-width: 220px; /* El navegador decide solo cuántas columnas entran según el ancho disponible */
+        column-gap: 20px;
+    }
+
+    .articulo {
+        background-color: #cfe8f0; /* color por default: pantallas anchas, con varias columnas */
+        border-radius: 8px;
+        padding: 14px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+        break-inside: avoid; /* evita que un artículo se parta entre dos columnas */
+    }
+
+    @media (max-width: 900px) {
+        .articulo {
+            background-color: #d4f7e0; /* pantallas medias, menos columnas */
+        }
+    }
+
+    @media (max-width: 500px) {
+        .articulo {
+            background-color: #fff3b0; /* pantalla angosta, una sola columna */
+        }
+    }
+
+    .articulo img {
+        width: 100%;
+        height: auto;
+        border-radius: 6px;
+        margin-top: 10px;
+    }
+</style>
+</head>
+<body>
+
+<h1>Encolumnado sin tablas</h1>
+
+<div class="columnas">
+
+    <div class="articulo">
+        <h2>Artículo 1</h2>
+        <p>Datos para incluir en esta columna. Datos para incluir en esta columna. Datos para incluir en esta columna. Datos para incluir en esta columna.</p>
+        <p>La siguiente imagen queda con un ancho del 100% de la columna, sin importar el tamaño real de la foto. Por eso, conviene que la imagen original tenga más resolución que el máximo tamaño previsto, para que se vea nítida incluso en un monitor de alta definición.</p>
+        <img src="ramo.svg" alt="Ramo de flores">
+    </div>
+
+    <div class="articulo">
+        <h2>Artículo 2</h2>
+        <p>Datos para incluir en esta columna. Datos para incluir en esta columna. Datos para incluir en esta columna.</p>
+    </div>
+
+    <div class="articulo">
+        <h2>Artículo 3</h2>
+        <p>Datos para incluir en esta columna. Datos para incluir en esta columna.</p>
+    </div>
+
+    <div class="articulo">
+        <h2>Artículo 4</h2>
+        <p>Datos para incluir en esta columna. Datos para incluir en esta columna. Datos para incluir en esta columna. Datos para incluir en esta columna. Datos para incluir en esta columna.</p>
+    </div>
+
+    <div class="articulo">
+        <h2>Artículo 5</h2>
+        <p>Datos para incluir en esta columna.</p>
+    </div>
+
+    <div class="articulo">
+        <h2>Artículo 6</h2>
+        <p>Datos para incluir en esta columna. Datos para incluir en esta columna. Datos para incluir en esta columna.</p>
+    </div>
+
+    <div class="articulo">
+        <h2>Artículo 7</h2>
+        <p>Datos para incluir en esta columna. Datos para incluir en esta columna.</p>
+    </div>
+
+    <div class="articulo">
+        <h2>Artículo 8</h2>
+        <p>Datos para incluir en esta columna. Datos para incluir en esta columna. Datos para incluir en esta columna. Datos para incluir en esta columna.</p>
+    </div>
+
+</div>
+
+</body>
+</html>

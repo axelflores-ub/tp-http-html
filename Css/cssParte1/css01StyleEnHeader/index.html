@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>css01StyleEnHeader</title>
+<style>
+    body {
+        background-color: #ffffff;
+        color: #222222;
+    }
+    h1 {
+        text-align: center;
+        font-size: 1.8em;
+        color: #1d3557;
+        background-color: #cfe0fc;
+    }
+    p {
+        text-align: right;
+        font-size: 1.1em;
+        color: #333333;
+        background-color: #fdf3e7;
+        font-style: italic;
+        border-left-style: solid;
+        border-right-style: solid;
+        border-width: medium;
+        border-color: #e76f51;
+    }
+    pre {
+        background-color: #f5f5f5;
+        padding: 10px;
+        border: 1px solid #cccccc;
+    }
+</style>
+</head>
+<body>
+
+<h1>Declaraciones en bloque definidas entre etiquetas style</h1>
+
+<pre>
+h1 {
+    text-align: center;
+    font-size: 1.8em; /*Un poco menos del doble de lo definido para el contenedor padre*/
+    color: #1d3557;
+    background-color: #cfe0fc;
+}
+</pre>
+
+<h1>Todos los títulos con etiqueta h1 comparten este mismo estilo.</h1>
+<h1>El h1 ocupa todo el ancho del contenedor (por default lleva display de bloque)</h1>
+<h1>El texto del h1 se muestra en azul oscuro (#1d3557).</h1>
+<h1>El fondo de cada h1 es celeste claro (#cfe0fc).</h1>
+<h1>El estilo indica que el texto del h1 va centrado y con un tamaño de 1.8em.</h1>
+
+<pre>
+p {
+    text-align: right;
+    font-size: 1.1em;
+    color: #333333;
+    background-color: #fdf3e7;
+    font-style: italic;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-width: medium;
+    border-color: #e76f51;
+}
+</pre>
+
+<p>Todos los textos con etiqueta p tienen este estilo definido dentro de la etiqueta style.</p>
+<p>Los párrafos quedan alineados a la derecha.</p>
+<p>El tamaño de letra es de 1.1em, un poco mayor al definido para el contenedor body.</p>
+<p>El color de letra es gris oscuro, para que se lea con buen contraste.</p>
+<p>El fondo de cada párrafo es color crema claro (#fdf3e7).</p>
+<p>El estilo de la fuente es itálica.</p>
+<p>Los bordes izquierdo y derecho son sólidos, de grosor medio y color naranja.</p>
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>css10DivsEnPila</title>
+<style>
+    body {
+        background-color: #eafaf7;
+        color: #222222;
+    }
+
+    .pila {
+        max-width: 380px;
+        margin: 0 auto;
+    }
+
+    .caja {
+        border-radius: 10px;
+        box-shadow: 2px 2px 6px rgba(0,0,0,0.25);
+        margin-bottom: 20px;
+        padding: 16px;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    /* Caja 1: el fondo cambia según el ancho de la ventana */
+    .caja1 {
+        background-color: #d9d9d9; /* default: ventanas mayores a 1080px */
+    }
+    @media (min-width: 600px) and (max-width: 1080px) {
+        .caja1 {
+            background-color: #fff3b0;
+        }
+    }
+    @media (max-width: 599px) {
+        .caja1 {
+            background-color: #cfe8f0;
+        }
+    }
+
+    /* Caja 2: gradiente radial */
+    .caja2 {
+        background: radial-gradient(circle, #fff3b0 0%, #ffd6a5 60%, #ffb4a2 100%);
+        height: 140px;
+    }
+
+    /* Caja 3: imagen de fondo */
+    .caja3 {
+        background-image: url('escena.svg');
+        background-size: cover;
+        background-position: center;
+        height: 160px;
+        color: #ffffff;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+    }
+
+    /* Caja 4: texto alineado a la izquierda, con padding */
+    .caja4 {
+        background-color: #f3e3c3;
+        text-align: left;
+    }
+</style>
+</head>
+<body>
+
+<h1>Cajas en pila</h1>
+
+<div class="pila">
+
+    <div class="caja caja1">
+        Fondo gris para ventanas mayores a 1080px<br>
+        Fondo amarillo claro para ventanas entre 600px y 1080px<br>
+        Fondo celeste para ventanas menores a 600px
+    </div>
+
+    <div class="caja caja2">
+        Gradiente radial como fondo.
+    </div>
+
+    <div class="caja caja3">
+        Imagen como fondo.
+    </div>
+
+    <div class="caja caja4">
+        Texto en div4, alineado a la izquierda y con padding.
+    </div>
+
+</div>
+
+</body>
+</html>

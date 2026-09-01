@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>css02SelectoresDeClase</title>
+<style>
+    body {
+        background-color: #f8fafc;
+    }
+    pre {
+        background-color: #eef1f4;
+        padding: 10px;
+        border: 1px solid #d3d9de;
+    }
+
+    p {
+        font-size: 1em;
+        margin-bottom: 40px;
+    }
+
+    .destacado {
+        font-weight: bold;
+        background-color: #fff3b0;
+        padding: 10px;
+    }
+
+    .nota {
+        font-size: 0.85em;
+        font-style: italic;
+        border: 1px solid #cfd8dc;
+        background-color: #f5f7f8;
+        padding: 10px;
+    }
+
+    .ayuda {
+        font-style: italic;
+        color: #ef6c00;
+        border: 1px solid #ffcc80;
+        background-color: #fff8f0;
+        text-align: center;
+        padding: 10px;
+    }
+
+    #soloUno {
+        border: 2px solid #c62828;
+        color: #c62828;
+        font-weight: bold;
+        text-align: center;
+        padding: 10px;
+        background-color: #fdecea;
+    }
+
+    .imagenMitad {
+        width: 50%;
+    }
+</style>
+</head>
+<body>
+
+<h1>Selectores de clase</h1>
+
+<p>A partir de esta página dejamos de usar el atributo <code>style</code> en las etiquetas.</p>
+<p>Todo el estilo del documento se define dentro de una etiqueta <code>style</code> anidada en el <code>head</code>, usando clases (<code>.nombreClase</code>).</p>
+
+<pre>
+p {
+    font-size: 1em;
+    margin-bottom: 40px;
+}
+</pre>
+<p>Este es el estilo por default de cualquier párrafo: deja un margen inferior para separarlos entre sí.</p>
+
+<pre>
+.destacado {
+    font-weight: bold;
+    background-color: #fff3b0;
+    padding: 10px;
+}
+</pre>
+<p class="destacado">Este párrafo toma el estilo definido en la etiqueta style como class="destacado".</p>
+
+<pre>
+.nota {
+    font-size: 0.85em;
+    font-style: italic;
+    border: 1px solid #cfd8dc;
+    background-color: #f5f7f8;
+    padding: 10px;
+}
+</pre>
+<p class="nota">Este párrafo usa la clase "nota": letra más chica, en cursiva y dentro de un recuadro, pensada para agregar aclaraciones secundarias sin robarle protagonismo al contenido principal.</p>
+
+<pre>
+.ayuda {
+    font-style: italic;
+    color: #ef6c00;
+    border: 1px solid #ffcc80;
+    background-color: #fff8f0;
+    text-align: center;
+    padding: 10px;
+}
+</pre>
+<p class="ayuda">Este párrafo toma el estilo definido en la etiqueta style como class="ayuda".</p>
+
+<p class="contenidoComun">Este párrafo tiene la clase "contenidoComun" aplicada, aunque para esa clase no se definió ningún estilo particular, por lo que se ve igual que un párrafo normal.</p>
+
+<pre>
+#soloUno {
+    border: 2px solid #c62828;
+    color: #c62828;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    background-color: #fdecea;
+}
+</pre>
+<p id="soloUno">Este párrafo tiene un estilo particular definido en el style del documento para un elemento específico con id="soloUno". No es un selector de clase sino un selector de elemento, por eso se usa "#" en lugar de ".".</p>
+
+<pre>
+.imagenMitad {
+    width: 50%;
+}
+</pre>
+<p>Todas las imágenes con class="imagenMitad" en esta página quedan limitadas al 50% del ancho del contenedor, más allá de su tamaño real en píxeles:</p>
+<img src="paisaje.svg" class="imagenMitad" alt="Ilustración de una casa con árboles y jardín">
+
+</body>
+</html>

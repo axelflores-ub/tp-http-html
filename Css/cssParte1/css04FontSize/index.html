@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>css04FontSize</title>
+<style>
+    body {
+        font-size: 12px; /* Tamaño default, pensado para el peor caso: pantallas chicas o de baja resolución */
+        background-color: #fdf6ec;
+        font-family: Arial, sans-serif;
+    }
+
+    h1 {
+        font-size: 2em; /* El doble del tamaño base, para que se note como título */
+        text-align: center;
+        background-color: rgba(0,0,0,0.06);
+        padding: 14px;
+    }
+
+    p {
+        font-size: 1em;
+        background-color: rgba(0,0,0,0.03);
+        padding: 8px;
+        margin: 6px 0;
+    }
+
+    /* Pantallas de resolución media */
+    @media (min-width: 800px) and (max-width: 1080px) {
+        body {
+            font-size: 24px;
+            background-color: #eaf4fb;
+        }
+    }
+
+    /* Pantallas de alta resolución */
+    @media (min-width: 1081px) {
+        body {
+            font-size: 36px;
+            background-color: #eefbea;
+        }
+    }
+</style>
+</head>
+<body>
+
+<h1>Tamaño de letra según la resolución de la pantalla</h1>
+
+<p>Los textos con etiqueta "h1" tienen el doble de tamaño que los párrafos comunes, así se distinguen como títulos.</p>
+<p>En este ejercicio se define un tamaño de letra default para el body, y todo el resto se expresa en unidades "em" (que toman ese valor como referencia).</p>
+<p>Para que el tamaño de letra cambie según el ancho de la pantalla, se usa la consulta de medios "@media()".</p>
+<p>La resolución de una pantalla se mide en píxeles de ancho por píxeles de alto.</p>
+<p>Los dispositivos chicos suelen tener mayor densidad de píxeles: por ejemplo, alrededor de 500ppp (píxeles por pulgada) en un celular moderno.</p>
+<p>Los dispositivos con pantallas grandes suelen tener menor densidad, del orden de los 100ppp.</p>
+<p>Por eso, el tamaño "visual" de las cosas termina siendo parecido tanto en pantallas grandes como chicas, aunque la cantidad de píxeles sea muy distinta.</p>
+<p>Si un dispositivo tiene alta densidad de píxeles, el texto puede definirse con más píxeles sin verse gigante.</p>
+<p>Por eso, si no se usa "@media", conviene definir el tamaño de letra pensando en el peor caso: los dispositivos de baja resolución.</p>
+<p>En este ejercicio la letra crece a medida que el ancho de pantalla (viewport) es mayor:</p>
+<p>12px (1em) para pantallas angostas, de baja resolución. No hay que olvidarse de definir este valor default en el body.</p>
+<p>24px (2em) para pantallas de resolución media, entre 800px y 1080px de ancho.</p>
+<p>36px (3em) para pantallas anchas, de alta resolución (más de 1080px).</p>
+
+</body>
+</html>

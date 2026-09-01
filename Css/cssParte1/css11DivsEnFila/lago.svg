@@ -1,0 +1,7 @@
+<svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Lago con montaña">
+  <rect width="200" height="150" fill="#bfe3f5"/>
+  <polygon points="60,90 100,30 140,90" fill="#7d8ca3"/>
+  <polygon points="85,90 100,60 115,90" fill="#f2f5f7"/>
+  <rect x="0" y="90" width="200" height="60" fill="#4f97b0"/>
+  <polygon points="60,150 100,120 140,150" fill="#39738a" opacity="0.6"/>
+</svg>

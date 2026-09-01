@@ -1,0 +1,5 @@
+<svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Colinas verdes">
+  <rect width="200" height="150" fill="#bfe3f5"/>
+  <ellipse cx="60" cy="140" rx="90" ry="50" fill="#6fae5e"/>
+  <ellipse cx="160" cy="150" rx="100" ry="45" fill="#4f9a4f"/>
+</svg>

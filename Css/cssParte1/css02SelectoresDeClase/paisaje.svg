@@ -1,0 +1,31 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustración de una casa con árboles y jardín">
+  <rect x="0" y="0" width="800" height="330" fill="#bfe3f5"/>
+  <circle cx="670" cy="90" r="55" fill="#ffe08a"/>
+  <rect x="0" y="330" width="800" height="170" fill="#8fc76b"/>
+
+  <!-- Árboles -->
+  <g>
+    <rect x="70" y="270" width="16" height="70" fill="#7a5230"/>
+    <circle cx="78" cy="250" r="50" fill="#4f9a4f"/>
+  </g>
+  <g>
+    <rect x="700" y="290" width="14" height="60" fill="#7a5230"/>
+    <circle cx="707" cy="270" r="42" fill="#4f9a4f"/>
+  </g>
+
+  <!-- Casa -->
+  <rect x="280" y="260" width="240" height="150" fill="#e8b06b" stroke="#8a5a2b" stroke-width="4"/>
+  <polygon points="260,260 400,160 540,260" fill="#c1543a" stroke="#8a2f20" stroke-width="4"/>
+  <rect x="380" y="300" width="40" height="110" fill="#5b3a22"/>
+  <rect x="310" y="300" width="45" height="45" fill="#cdeeff" stroke="#8a5a2b" stroke-width="3"/>
+  <rect x="445" y="300" width="45" height="45" fill="#cdeeff" stroke="#8a5a2b" stroke-width="3"/>
+
+  <!-- Flores -->
+  <g>
+    <circle cx="150" cy="450" r="10" fill="#e05a7e"/>
+    <circle cx="180" cy="460" r="10" fill="#f2a640"/>
+    <circle cx="210" cy="448" r="10" fill="#e05a7e"/>
+    <circle cx="600" cy="455" r="10" fill="#f2a640"/>
+    <circle cx="630" cy="465" r="10" fill="#e05a7e"/>
+  </g>
+</svg>

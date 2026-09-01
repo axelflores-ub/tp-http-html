@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>css16SelectoresDeEvento</title>
+<style>
+    body {
+        background-color: #cfe8f0;
+        color: #222222;
+    }
+
+    /* --- :hover en el menú --- */
+    .menu {
+        display: flex;
+        margin-bottom: 20px;
+    }
+    .menu a {
+        flex: 1;
+        text-align: center;
+        padding: 14px;
+        background-color: #c7cdd1;
+        color: #1d3557;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    .menu a:hover {
+        background-color: #1d3557;
+        color: #ffffff;
+    }
+
+    /* --- :focus en los inputs --- */
+    label {
+        display: block;
+        margin-top: 10px;
+        font-weight: bold;
+    }
+    input[type="text"] {
+        border: 1px solid #999999;
+        padding: 4px;
+    }
+    input[type="text"]:focus {
+        border: 2px solid #1d3557;
+        border-radius: 4px;
+        background-color: #eef4fc;
+        outline: none;
+    }
+
+    /* --- :target en las imágenes --- */
+    .galeria {
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+    }
+    .galeria a {
+        display: block;
+        flex: 0 0 120px; /* tamaño base de la miniatura */
+        transition: flex-basis 0.3s ease;
+    }
+    .galeria img {
+        display: block;
+        width: 100%;
+        height: 90px;
+        object-fit: cover;
+        border: 1px solid #1d3557;
+    }
+    /* Al hacer click, el href="#fotoN" coincide con el id del <a> y dispara :target */
+    .galeria a:target {
+        flex-basis: 30%; /* 30% del ancho del contenedor padre (.galeria) */
+    }
+    .galeria a:target img {
+        height: auto;
+    }
+</style>
+</head>
+<body>
+
+<nav class="menu">
+    <a href="respuesta1.html">Opción 1.</a>
+    <a href="respuesta2.html">Opción 2.</a>
+    <a href="respuesta3.html">Opción 3.</a>
+</nav>
+
+<label for="apellido">Apellido:</label>
+<input type="text" id="apellido" name="apellido">
+
+<label for="nombres">Nombres:</label>
+<input type="text" id="nombres" name="nombres">
+
+<h1>Expandir la imagen al 30% del contenedor padre con un click</h1>
+
+<div class="galeria">
+    <a id="foto1" href="#foto1"><img src="foto1.svg" alt="Montaña nevada"></a>
+    <a id="foto2" href="#foto2"><img src="foto2.svg" alt="Gato ilustrado"></a>
+    <a id="foto3" href="#foto3"><img src="foto3.svg" alt="Colinas verdes"></a>
+    <a id="foto4" href="#foto4"><img src="foto4.svg" alt="Flores rosadas"></a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+<svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Montaña nevada">
+  <rect width="200" height="150" fill="#aee1f5"/>
+  <polygon points="30,130 90,40 150,130" fill="#5c7a99"/>
+  <polygon points="65,130 90,80 115,130" fill="#f4f7fb"/>
+  <polygon points="110,130 155,60 200,130" fill="#7d97b3"/>
+</svg>

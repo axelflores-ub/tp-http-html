@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>css08CentradoYPadding</title>
+<style>
+    body {
+        background-color: #ffffff;
+        color: #222222;
+    }
+
+    .caja {
+        width: 50%;
+        margin: 0 auto; /* Esto centra el bloque horizontalmente dentro de la ventana */
+    }
+
+    .sinPadding {
+        background-color: #e0d4f7;
+    }
+
+    .conPaddingSinBorderBox {
+        background-color: #ffd6d6;
+        padding: 20px;
+        /* box-sizing default es content-box: el padding se suma al 50% de ancho,
+           por eso esta caja termina siendo más ancha que las otras dos */
+    }
+
+    .conPaddingYBorderBox {
+        background-color: #d4f7e0;
+        padding: 20px;
+        box-sizing: border-box;
+        /* Con border-box, el padding queda incluido dentro del 50% de ancho,
+           por eso el texto tiene menos lugar y se corta en más líneas */
+    }
+</style>
+</head>
+<body>
+
+<h1>Estos tres bloques tienen un ancho del 50% de la ventana, centrados con margin: 0 auto</h1>
+
+<div class="caja sinPadding">
+    <p>Línea de ejemplo, sin padding.</p>
+    <p>Línea de ejemplo, sin padding.</p>
+    <p>Línea de ejemplo, sin padding.</p>
+    <p>Línea de ejemplo, sin padding.</p>
+    <p>Línea de ejemplo, sin padding.</p>
+    <p>Línea de ejemplo, sin padding.</p>
+</div>
+
+<div class="caja conPaddingSinBorderBox">
+    <p>Línea de ejemplo, con padding y sin box-sizing.</p>
+    <p>Línea de ejemplo, con padding y sin box-sizing.</p>
+    <p>Línea de ejemplo, con padding y sin box-sizing.</p>
+    <p>Línea de ejemplo, con padding y sin box-sizing.</p>
+    <p>Línea de ejemplo, con padding y sin box-sizing.</p>
+</div>
+
+<div class="caja conPaddingYBorderBox">
+    <p>Línea de ejemplo, con padding y con box-sizing:border-box.</p>
+    <p>Línea de ejemplo, con padding y con box-sizing:border-box.</p>
+    <p>Línea de ejemplo, con padding y con box-sizing:border-box.</p>
+    <p>Línea de ejemplo, con padding y con box-sizing:border-box.</p>
+    <p>Línea de ejemplo, con padding y con box-sizing:border-box.</p>
+</div>
+
+</body>
+</html>

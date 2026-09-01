@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>css07BackgroundFijo</title>
+<style>
+    body {
+        background-color: #cfe8f0;
+    }
+
+    .caja {
+        width: 520px;
+        height: 300px;
+        box-sizing: border-box;
+        border: 3px solid red;
+        padding: 16px;
+        overflow-y: scroll;
+        background-image: url('fondo.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        font-size: 1.05em;
+    }
+</style>
+</head>
+<body>
+
+<div class="caja">
+    <p>El padding es importante para que el texto no quede pegado al borde de la caja.</p>
+    <p>No hay que olvidarse de usar box-sizing:border-box, para que el ancho y el alto de la caja sean exactamente los definidos en width y height (incluyendo borde y padding).</p>
+    <p>Al usar background-attachment:fixed, la imagen de fondo queda fija: aunque el texto se desplace al scrollear dentro del contenedor, el fondo no se mueve.</p>
+    <p>Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto.</p>
+    <p>Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto.</p>
+    <p>Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto.</p>
+    <p>Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto.</p>
+    <p>Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto.</p>
+    <p>Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto.</p>
+    <p>Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto. Texto.</p>
+</div>
+
+</body>
+</html>
