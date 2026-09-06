@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>js05_3_form_confirmacion</title>
+<style>
+    body {
+        background-color: #eef4fc;
+        color: #222222;
+        font-family: Arial, sans-serif;
+        padding: 20px;
+    }
+    label {
+        display: block;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+    input[type="text"] {
+        padding: 6px;
+        border: 1px solid #1d3557;
+        border-radius: 4px;
+    }
+    .botonera {
+        margin-top: 20px;
+    }
+    button {
+        padding: 8px 16px;
+        margin-right: 10px;
+        border: 1px solid #1d3557;
+        background-color: #cfe0fc;
+        color: #1d3557;
+        font-weight: bold;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #1d3557;
+        color: #ffffff;
+    }
+</style>
+</head>
+<body>
+
+<h1>Confirmación antes de enviar el formulario</h1>
+
+<form action="respuestaFormulario.html" method="get" onsubmit="return confirm('¿Estás seguro de que querés enviar el formulario?')">
+    <label for="nombre">Nombre</label>
+    <input type="text" id="nombre" name="nombre">
+
+    <label for="apellido">Apellido</label>
+    <input type="text" id="apellido" name="apellido">
+
+    <div class="botonera">
+        <button type="reset">Blanquear</button>
+        <button type="submit">Enviar</button>
+    </div>
+</form>
+
+</body>
+</html>

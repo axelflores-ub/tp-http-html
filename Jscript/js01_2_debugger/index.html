@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>js01_2_debugger</title>
+<style>
+    body {
+        background-color: #eef4fc;
+        color: #222222;
+        font-family: Arial, sans-serif;
+    }
+    pre {
+        background-color: #f5f5f5;
+        border: 1px solid #cccccc;
+        padding: 12px;
+        display: inline-block;
+    }
+    .aviso {
+        color: #1d3557;
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+
+<h1>El siguiente código se va a ejecutar a continuación:</h1>
+
+<pre>var x = 7;
+var y = 5;
+var z = x + y;
+console.log('El resultado de sumar x + y es: ' + z);</pre>
+
+<p class="aviso">Abrí las devTools del navegador con F12 y mirá el resultado en la pestaña Console.</p>
+
+<script type="text/javascript">
+    var x = 7;
+    var y = 5;
+    var z = x + y;
+    console.log('El resultado de sumar x + y es: ' + z);
+</script>
+
+</body>
+</html>

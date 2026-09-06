@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>js03_5_alcance</title>
+<style>
+    body {
+        background-color: #eef4fc;
+        color: #222222;
+        font-family: Arial, sans-serif;
+        padding: 20px;
+    }
+    .botones {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 16px;
+    }
+    button {
+        padding: 12px 18px;
+        border: 1px solid #2d6a4f;
+        background-color: #d4f7e0;
+        color: #1b4332;
+        font-weight: bold;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #2d6a4f;
+        color: #ffffff;
+    }
+</style>
+</head>
+<body>
+
+<script type="text/javascript">
+    var variableGlobal;
+
+    alert("Se declaró una variableGlobal pero todavía no se le asignó valor:\nvar variableGlobal;");
+    alert("El valor de variableGlobal es: " + variableGlobal);
+    alert("El tipo de variableGlobal es: " + typeof variableGlobal);
+</script>
+
+<h1>Vamos a intentar asignarle un valor a la variable global desde adentro de una función</h1>
+
+<div class="botones">
+    <button onclick="asignarConDeclaracion()" title="Declara var variableGlobal de nuevo, adentro de la función">Asignar CON declaración (var)</button>
+    <button onclick="asignarSinDeclaracion()" title="Asigna directamente, sin volver a declarar con var">Asignar SIN declaración</button>
+    <button onclick="mostrarGlobal()">Mostrar variable global</button>
+</div>
+
+<script type="text/javascript">
+    function asignarConDeclaracion() {
+        var valorIngresado = prompt("Ingresá un valor para la variable global:");
+        var variableGlobal = valorIngresado; // ¡Ojo! el "var" acá crea una variable LOCAL que tapa a la global
+        alert("Valor de esta variable (en realidad local): " + variableGlobal);
+        alert("Tipo de esta variable (en realidad local): " + typeof variableGlobal);
+    }
+
+    function asignarSinDeclaracion() {
+        var valorIngresado = prompt("Ingresá un valor para la variable global:");
+        variableGlobal = valorIngresado; // sin "var": esto sí modifica la variable global real
+        alert("Ahora sí, valor de la variableGlobal: " + variableGlobal);
+    }
+
+    function mostrarGlobal() {
+        if (typeof variableGlobal === "undefined") {
+            alert("La variableGlobal todavía no fue asignada de verdad");
+        } else {
+            alert("El valor de la variableGlobal es: " + variableGlobal);
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>js04_5_funcionFlecha</title>
+<style>
+    body {
+        background-color: #eef4fc;
+        color: #222222;
+        font-family: Arial, sans-serif;
+        padding: 20px;
+    }
+    pre {
+        background-color: #f5f5f5;
+        border: 1px solid #cccccc;
+        padding: 12px;
+        display: inline-block;
+        font-size: 1.1em;
+    }
+    .fila {
+        margin-top: 16px;
+    }
+    input {
+        padding: 8px;
+        border: 1px solid #1d3557;
+        border-radius: 6px;
+        width: 90px;
+        margin-right: 8px;
+    }
+    button {
+        padding: 8px 16px;
+        border: 1px solid #1d3557;
+        background-color: #cfe0fc;
+        color: #1d3557;
+        font-weight: bold;
+        border-radius: 6px;
+        cursor: pointer;
+        margin-right: 8px;
+    }
+    button:hover {
+        background-color: #1d3557;
+        color: #ffffff;
+    }
+</style>
+</head>
+<body>
+
+<h1>Función flecha</h1>
+
+<pre>const suma = (a, b) => { let c = a + b; return c; }</pre>
+
+<div class="fila">
+    <input type="text" id="valorA">
+    <input type="text" id="valorB">
+    <button onclick="calcular()">suma</button>
+    <input type="text" id="resultado" readonly>
+</div>
+
+<script type="text/javascript">
+    const suma = (a, b) => {
+        let c = a + b;
+        return c;
+    };
+
+    function calcular() {
+        let a = parseFloat(document.getElementById('valorA').value);
+        let b = parseFloat(document.getElementById('valorB').value);
+        document.getElementById('resultado').value = suma(a, b);
+    }
+</script>
+
+</body>
+</html>

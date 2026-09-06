@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Sentencias simples en JavaScript</title>
+<style>
+    body {
+        background-color: #ffffff;
+        color: #222222;
+        font-family: Arial, sans-serif;
+    }
+</style>
+</head>
+<body>
+
+<h1>Texto 1, escrito directamente en HTML</h1>
+
+<script type="text/javascript">
+    document.write("<h1>Texto 2. Mensaje agregado por JavaScript con el método write().</h1>");
+    document.write("<h1>Todavía no se dibuja en pantalla, porque el navegador no terminó su flujo de escritura.</h1>");
+    alert("Alerta 3. Este cartel lo dispara un script del documento. Al ser una ventana modal, el flujo de escritura del navegador queda en pausa hasta que se cierra. El navegador puede mostrar esta ventana incluso antes de terminar de interpretar o renderizar la página.");
+</script>
+
+<h1>Texto 4, escrito en HTML justo después de mostrar la Alerta 3</h1>
+<br>
+
+<script type="text/javascript">
+    document.write("<h1>Texto 5. Otra línea agregada con el método write().</h1>");
+    document.write("<h1>Tampoco se dibuja todavía: el flujo de escritura sigue sin cerrarse.</h1>");
+    alert("Alerta 6. Esta se dispara al final de todo el código del script.");
+</script>
+
+<h1>El flujo de escritura del navegador recién se cierra un tiempo después de leer la última línea del documento, y una vez cerradas todas las ventanas modales tipo alert().</h1>
+
+</body>
+</html>

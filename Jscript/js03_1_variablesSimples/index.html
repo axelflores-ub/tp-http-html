@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>js03_1_variablesSimples</title>
+<style>
+    body {
+        background-color: #ffffff;
+        color: #222222;
+        font-family: Arial, sans-serif;
+        padding: 20px;
+    }
+
+    .botones {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 16px;
+    }
+
+    button {
+        padding: 8px 14px;
+        border: 1px solid #6a4c93;
+        background-color: #ece3fb;
+        color: #4a2f82;
+        font-weight: bold;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #6a4c93;
+        color: #ffffff;
+    }
+
+    #resultado {
+        min-height: 260px;
+        border: 2px solid #6a4c93;
+        border-radius: 10px;
+        background-color: #f3edfc;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    #resultado h2 {
+        margin: 6px 0;
+    }
+</style>
+</head>
+<body>
+
+<div class="botones">
+    <button onclick="declararZ()">var z;</button>
+    <button onclick="reasignarZ()">z = "otro valor";</button>
+    <button onclick="declararQ()">let q;</button>
+    <button onclick="declararA()">var a = 1;</button>
+    <button onclick="declararB()">var b = "1";</button>
+    <button onclick="declararC()">var c = 2;</button>
+    <button onclick="calcularSuma1()">suma1 = a + b;</button>
+    <button onclick="calcularSuma2()">suma2 = a + c;</button>
+</div>
+
+<div id="resultado"></div>
+
+<script type="text/javascript">
+    var z, q, a, b, c, suma1, suma2;
+
+    function mostrar(nombre, valor) {
+        document.getElementById('resultado').innerHTML =
+            '<h2>Valor de ' + nombre + ': ' + valor + '</h2><h2>Tipo de ' + nombre + ': ' + typeof valor + '</h2>';
+    }
+
+    function declararZ() {
+        var z;
+        mostrar('z', z);
+    }
+    function reasignarZ() {
+        z = "otro valor para z"; // var admite reasignación sin problema
+        mostrar('z', z);
+    }
+    function declararQ() {
+        let q;
+        mostrar('q', q);
+    }
+    function declararA() {
+        a = 1;
+        mostrar('a', a);
+    }
+    function declararB() {
+        b = "1";
+        mostrar('b', b);
+    }
+    function declararC() {
+        c = 2;
+        mostrar('c', c);
+    }
+    function calcularSuma1() {
+        suma1 = a + b; // "1" es string: a+b concatena en vez de sumar
+        mostrar('suma1', suma1);
+    }
+    function calcularSuma2() {
+        suma2 = a + c; // c es number: a+c suma numéricamente
+        mostrar('suma2', suma2);
+    }
+</script>
+
+</body>
+</html>

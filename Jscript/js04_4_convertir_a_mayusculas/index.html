@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Conversión a mayúscula</title>
+<style>
+    body {
+        background-color: #ffffff;
+        font-family: Arial, sans-serif;
+    }
+    .panel {
+        background-color: #d4f7e0;
+        padding: 20px;
+        display: inline-block;
+        border-radius: 8px;
+    }
+    .fila {
+        margin-bottom: 14px;
+    }
+    label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 4px;
+    }
+    input {
+        padding: 6px;
+        border: 1px solid #2d6a4f;
+        border-radius: 4px;
+        width: 220px;
+    }
+</style>
+</head>
+<body>
+
+<div class="panel">
+    <div class="fila">
+        <label for="nombre">Ingresá tu nombre:</label>
+        <input type="text" id="nombre">
+    </div>
+    <div class="fila">
+        <label for="apellido">Ingresá tu apellido:</label>
+        <input type="text" id="apellido">
+    </div>
+</div>
+
+<script type="text/javascript">
+    document.getElementById("nombre").addEventListener("focusout", function() {
+        this.value = this.value.toUpperCase();
+    });
+    document.getElementById("apellido").addEventListener("focusout", function() {
+        this.value = this.value.toUpperCase();
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>js04_2_operaciones_entre_inputs</title>
+<style>
+    body {
+        background-color: #ffffff;
+        color: #222222;
+        font-family: Arial, sans-serif;
+        padding: 20px;
+    }
+    .panel {
+        background-color: #d9edf7;
+        padding: 16px;
+        border-radius: 8px;
+        display: inline-block;
+    }
+    .fila {
+        margin-bottom: 8px;
+    }
+    .fila label {
+        display: inline-block;
+        width: 90px;
+        font-weight: bold;
+    }
+    .fila input {
+        padding: 6px;
+        border: 1px solid #31708f;
+        border-radius: 4px;
+        width: 120px;
+    }
+    .botonera {
+        margin-top: 16px;
+    }
+    button {
+        padding: 10px 18px;
+        margin-right: 10px;
+        border: 1px solid #31708f;
+        background-color: #eef7fb;
+        color: #245269;
+        font-weight: bold;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #31708f;
+        color: #ffffff;
+    }
+</style>
+</head>
+<body>
+
+<h1>Introducí un valor en cada cuadro de texto y apretá un botón para ejecutar la función correspondiente</h1>
+
+<div class="panel">
+    <div class="fila"><label for="e1">Entrada 1:</label><input type="text" id="e1" value="0"></div>
+    <div class="fila"><label for="e2">Entrada 2:</label><input type="text" id="e2" value="0"></div>
+    <div class="fila"><label for="e3">Entrada 3:</label><input type="text" id="e3" value="0"></div>
+    <div class="fila"><label for="resultado">Resultado:</label><input type="text" id="resultado" readonly></div>
+</div>
+
+<div class="botonera">
+    <button onclick="sumar()">Suma</button>
+    <button onclick="promediar()">Promedia</button>
+    <button onclick="mayor()">Mayor</button>
+</div>
+
+<script type="text/javascript">
+    function leerEntradas() {
+        let e1 = parseFloat(document.getElementById('e1').value);
+        let e2 = parseFloat(document.getElementById('e2').value);
+        let e3 = parseFloat(document.getElementById('e3').value);
+        return [e1, e2, e3];
+    }
+
+    function sumar() {
+        let [e1, e2, e3] = leerEntradas();
+        document.getElementById('resultado').value = e1 + e2 + e3;
+    }
+
+    function promediar() {
+        let [e1, e2, e3] = leerEntradas();
+        document.getElementById('resultado').value = (e1 + e2 + e3) / 3;
+    }
+
+    function mayor() {
+        let [e1, e2, e3] = leerEntradas();
+        document.getElementById('resultado').value = Math.max(e1, e2, e3);
+    }
+</script>
+
+</body>
+</html>

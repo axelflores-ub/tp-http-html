@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>js02_comando_en_evento</title>
+<style>
+    body {
+        background-color: #eef4fc;
+        color: #222222;
+        font-family: Arial, sans-serif;
+        padding: 20px;
+    }
+    button {
+        padding: 10px 16px;
+        margin-right: 12px;
+        border: 1px solid #1d3557;
+        background-color: #cfe0fc;
+        color: #1d3557;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 6px;
+    }
+    button:hover {
+        background-color: #1d3557;
+        color: #ffffff;
+    }
+</style>
+</head>
+<body>
+
+<h1>Ejercicio js02_comando_en_evento</h1>
+
+<button onClick="alert('Este alert se ejecuta desde el evento onClick del botón. El código está escrito directamente como valor del atributo onClick.')">Ejecutar un alert</button>
+
+<button onClick="document.write('<h1>Hola. Este document.write() pisó todo lo que había antes en la página.</h1><button onclick=&quot;location.reload()&quot;>Volver al estado inicial</button>')">Ejecutar un document.write()</button>
+
+</body>
+</html>

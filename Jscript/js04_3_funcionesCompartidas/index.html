@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>js04_3_funcionesCompartidas</title>
+<style>
+    body {
+        background-color: #f0f0f0;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        padding-top: 30px;
+    }
+    .calculadora {
+        background-color: #dddddd;
+        padding: 20px;
+        border-radius: 10px;
+        width: 460px;
+    }
+    #display {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 14px;
+        font-size: 1.3em;
+        text-align: right;
+        border: 1px solid #999999;
+        border-radius: 6px;
+        margin-bottom: 12px;
+    }
+    .teclado {
+        background-color: #cde8e5;
+        padding: 16px;
+        border-radius: 8px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        margin-bottom: 12px;
+    }
+    .teclado button {
+        padding: 16px;
+        font-size: 1.1em;
+        border: 1px solid #6a4c93;
+        background-color: #ffffff;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+    .teclado button:hover {
+        background-color: #6a4c93;
+        color: #ffffff;
+    }
+    .cero {
+        grid-column: 1;
+    }
+    .funciones {
+        background-color: #ffe8cc;
+        padding: 16px;
+        border-radius: 8px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    .funciones button {
+        padding: 14px;
+        border: 1px solid #b06a1f;
+        background-color: #ffffff;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+    .funciones button:hover {
+        background-color: #b06a1f;
+        color: #ffffff;
+    }
+</style>
+</head>
+<body>
+
+<div class="calculadora">
+    <input type="text" id="display" readonly>
+
+    <div class="teclado">
+        <button onclick="agregarDigito(1)">1</button>
+        <button onclick="agregarDigito(2)">2</button>
+        <button onclick="agregarDigito(3)">3</button>
+        <button onclick="agregarDigito(4)">4</button>
+        <button onclick="agregarDigito(5)">5</button>
+        <button onclick="agregarDigito(6)">6</button>
+        <button onclick="agregarDigito(7)">7</button>
+        <button onclick="agregarDigito(8)">8</button>
+        <button onclick="agregarDigito(9)">9</button>
+        <button class="cero" onclick="agregarDigito(0)">0</button>
+    </div>
+
+    <div class="funciones">
+        <button onclick="sumarAlAcumulador()">+Acumulador</button>
+        <button onclick="mostrarAcumulador()">Muestra Acumulador</button>
+        <button onclick="borrarAcumulador()">Borra Acumulador</button>
+        <button onclick="borrarDisplay()">Borra display</button>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var acumulador = 0;
+
+    // Función compartida: la usan los 10 botones de dígitos, pasándole cuál es su número
+    function agregarDigito(digito) {
+        document.getElementById('display').value += digito;
+    }
+
+    function sumarAlAcumulador() {
+        let valorDisplay = parseFloat(document.getElementById('display').value) || 0;
+        acumulador += valorDisplay;
+    }
+
+    function mostrarAcumulador() {
+        document.getElementById('display').value = acumulador;
+    }
+
+    function borrarDisplay() {
+        document.getElementById('display').value = "";
+    }
+
+    function borrarAcumulador() {
+        acumulador = 0;
+    }
+</script>
+
+</body>
+</html>

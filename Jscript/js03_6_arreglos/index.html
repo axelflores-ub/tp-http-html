@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>js03_6_arreglos</title>
+<style>
+    body {
+        background-color: #fdf6ec;
+        color: #222222;
+        font-family: Arial, sans-serif;
+        padding: 20px;
+    }
+    .dato {
+        background-color: #ffe8cc;
+        border-left: 4px solid #b06a1f;
+        padding: 8px 14px;
+        margin-bottom: 8px;
+        display: inline-block;
+    }
+</style>
+</head>
+<body>
+
+<h1>Arreglos de índice numérico</h1>
+
+<script type="text/javascript">
+    var arregloFrutas = [];
+    arregloFrutas = ["pera", "naranja"];
+    arregloFrutas.push(prompt("El arreglo de frutas ya tiene dos elementos cargados por programa (pera y naranja). Agregá un tercer elemento con índice numérico:"));
+
+    document.write("<div class='dato'>Tipo de arregloFrutas: " + typeof arregloFrutas + "</div><br>");
+    document.write("<div class='dato'>Elemento 0 (cargado por programa): " + arregloFrutas[0] + "</div><br>");
+    document.write("<div class='dato'>Elemento 1 (cargado por programa): " + arregloFrutas[1] + "</div><br>");
+    document.write("<div class='dato'>Elemento 2 (cargado desde teclado): " + arregloFrutas[2] + "</div><br>");
+    document.write("<div class='dato'>Cantidad de elementos: " + arregloFrutas.length + "</div>");
+</script>
+
+</body>
+</html>

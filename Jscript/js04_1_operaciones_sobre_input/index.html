@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>js04_1_operaciones_sobre_input</title>
+<style>
+    body {
+        background-color: #eef4fc;
+        color: #222222;
+        font-family: Arial, sans-serif;
+        padding: 20px;
+    }
+    #x {
+        padding: 8px;
+        font-size: 1em;
+        border: 1px solid #6a4c93;
+        border-radius: 6px;
+        margin-right: 10px;
+    }
+    button {
+        padding: 8px 14px;
+        margin-right: 8px;
+        border: 1px solid #6a4c93;
+        background-color: #ece3fb;
+        color: #4a2f82;
+        font-weight: bold;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #6a4c93;
+        color: #ffffff;
+    }
+</style>
+</head>
+<body>
+
+<h1>Escribí un número en el cuadro de texto y apretá un botón para operar sobre él</h1>
+
+<input type="text" id="x" value="3">
+<button onclick="mostrarValor()">Mostrar valor</button>
+<button onclick="sumarUno()">x + 1</button>
+<button onclick="elevarAlCuadrado()">x**2</button>
+<button onclick="multiplicarPorDos()">x * 2</button>
+<button onclick="dosElevadoAX()">2**x</button>
+
+<script type="text/javascript">
+    function mostrarValor() {
+        alert(document.getElementById('x').value);
+    }
+    function sumarUno() {
+        let valor = parseInt(document.getElementById('x').value);
+        document.getElementById('x').value = valor + 1;
+    }
+    function elevarAlCuadrado() {
+        let valor = parseInt(document.getElementById('x').value);
+        document.getElementById('x').value = valor ** 2;
+    }
+    function multiplicarPorDos() {
+        let valor = parseInt(document.getElementById('x').value);
+        document.getElementById('x').value = valor * 2;
+    }
+    function dosElevadoAX() {
+        let valor = parseInt(document.getElementById('x').value);
+        document.getElementById('x').value = 2 ** valor;
+    }
+</script>
+
+</body>
+</html>
