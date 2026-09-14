@@ -2,17 +2,57 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Html</title>
+<title>Trabajo Práctico</title>
+<style>
+    :root { --acento: #283593; --acento-claro: #c5cae9; }
+    body { margin: 0; font-family: Arial, sans-serif; background-color: #ffffff; color: #222222; }
+    header { background-color: var(--acento); color: #ffffff; padding: 40px; }
+    header h1 { margin: 0 0 6px; font-size: 2.2em; }
+    header p { margin: 2px 0; opacity: 0.9; }
+    main { padding: 30px 40px; }
+    h2 { color: var(--acento); }
+    .grid { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 30px; }
+    .grid a {
+        display: block;
+        padding: 18px 24px;
+        background-color: var(--acento-claro);
+        color: var(--acento);
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.1em;
+        border-radius: 10px;
+        min-width: 160px;
+        text-align: center;
+        transition: transform 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+    }
+    .grid a:hover { background-color: var(--acento); color: #ffffff; transform: translateY(-3px); }
+</style>
 </head>
 <body>
-<h1>Html</h1>
-<ul>
-    <li><a href="ejer01PreguntasHTTP/index.html">ejer01PreguntasHTTP</a></li>
-    <li><a href="ejer02Tablas/index.html">ejer02Tablas</a></li>
-    <li><a href="ejer03Formularios/index.html">ejer03Formularios</a></li>
-    <li><a href="ejer04Iframe/index.html">ejer04Iframe</a></li>
-    <li><a href="otros/">otros</a></li>
-    <li><a href="Plantilla/">Plantilla</a></li>
-</ul>
+
+<header>
+    <h1>Trabajo Práctico</h1>
+    <p>Programación en ambiente de redes</p>
+    <p>Axel Flores</p>
+</header>
+
+<main>
+    <h2>Secciones</h2>
+    <div class="grid">
+        <a href="Css/index.html">Css</a>
+        <a href="Jscript/index.html">Jscript</a>
+    </div>
+
+    <h2>Ejercicios de Html</h2>
+    <div class="grid">
+        <a href="ejer01PreguntasHTTP/index.html">ejer01PreguntasHTTP</a>
+        <a href="ejer02Tablas/index.html">ejer02Tablas</a>
+        <a href="ejer03Formularios/index.html">ejer03Formularios</a>
+        <a href="ejer04Iframe/index.html">ejer04Iframe</a>
+        <a href="otros/">otros</a>
+        <a href="Plantilla/">Plantilla</a>
+    </div>
+</main>
+
 </body>
 </html>

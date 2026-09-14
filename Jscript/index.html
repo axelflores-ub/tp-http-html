@@ -4,35 +4,61 @@
 <meta charset="UTF-8">
 <title>Jscript</title>
 <style>
-    body {
-        background-color: #eef4fc;
-        color: #222222;
-        font-family: Arial, sans-serif;
+    :root { --acento: #2d6a4f; --acento-claro: #d4f7e0; }
+    body { margin: 0; font-family: Arial, sans-serif; background-color: #ffffff; color: #222222; }
+    header { background-color: var(--acento); color: #ffffff; padding: 40px; }
+    header h1 { margin: 0 0 6px; font-size: 2.2em; }
+    header p { margin: 2px 0; opacity: 0.9; }
+    main { padding: 30px 40px; }
+    .grid { display: flex; flex-wrap: wrap; gap: 14px; }
+    .grid a {
+        display: block;
+        padding: 16px 20px;
+        background-color: var(--acento-claro);
+        color: var(--acento);
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 10px;
+        min-width: 220px;
+        text-align: center;
+        transition: transform 0.15s ease, background-color 0.15s ease, color 0.15s ease;
     }
+    .grid a:hover { background-color: var(--acento); color: #ffffff; transform: translateY(-3px); }
+    .volver { margin-top: 30px; }
+    .volver a { color: var(--acento); }
 </style>
 </head>
 <body>
-<h1>Índice ejercicios JavaScript</h1>
-<ol>
-    <li><a href="js01_1_sentencias/index.html">js01_1_sentencias</a></li>
-    <li><a href="js01_2_debugger/index.html">js01_2_debugger</a></li>
-    <li><a href="js02_comando_en_evento/index.html">js02_comando_en_evento</a></li>
-    <li><a href="js03_1_variablesSimples/index.html">js03_1_variablesSimples</a></li>
-    <li><a href="js03_5_alcance/index.html">js03_5_alcance</a></li>
-    <li><a href="js03_6_arreglos/index.html">js03_6_arreglos</a></li>
-    <li><a href="js04_1_operaciones_sobre_input/index.html">js04_1_operaciones_sobre_input</a></li>
-    <li><a href="js04_2_operaciones_entre_inputs/index.html">js04_2_operaciones_entre_inputs</a></li>
-    <li><a href="js04_3_funcionesCompartidas/index.html">js04_3_funcionesCompartidas</a></li>
-    <li><a href="js04_4_convertir_a_mayusculas/index.html">js04_4_convertir_a_mayusculas</a></li>
-    <li><a href="js04_5_funcionFlecha/index.html">js04_5_funcionFlecha</a></li>
-    <li><a href="js05_1_location/index.html">js05_1_location</a></li>
-    <li><a href="js05_3_form_confirmacion/index.html">js05_3_form_confirmacion</a></li>
-    <li><a href="js05_4_traduccion/index.html">js05_4_traduccion</a></li>
-    <li><a href="js05_6_variables_objeto_dato/index.html">js05_6_variables_objeto_dato</a></li>
-    <li><a href="js06_validacionConKeyUp/index.html">js06_validacionConKeyUp</a></li>
-    <li><a href="js07_form_abm/index.html">js07_form_abm</a></li>
-    <li><a href="js09_creacion_objetos/index.html">js09_creacion_objetos</a></li>
-</ol>
-<p><a href="../index.html">Volver al índice principal</a></p>
+
+<header>
+    <h1>Índice de ejercicios JavaScript</h1>
+    <p>Programación en ambiente de redes</p>
+    <p>Axel Flores</p>
+</header>
+
+<main>
+    <div class="grid">
+        <a href="js01_1_sentencias/index.html">js01_1_sentencias</a>
+        <a href="js01_2_debugger/index.html">js01_2_debugger</a>
+        <a href="js02_comando_en_evento/index.html">js02_comando_en_evento</a>
+        <a href="js03_1_variablesSimples/index.html">js03_1_variablesSimples</a>
+        <a href="js03_5_alcance/index.html">js03_5_alcance</a>
+        <a href="js03_6_arreglos/index.html">js03_6_arreglos</a>
+        <a href="js04_1_operaciones_sobre_input/index.html">js04_1_operaciones_sobre_input</a>
+        <a href="js04_2_operaciones_entre_inputs/index.html">js04_2_operaciones_entre_inputs</a>
+        <a href="js04_3_funcionesCompartidas/index.html">js04_3_funcionesCompartidas</a>
+        <a href="js04_4_convertir_a_mayusculas/index.html">js04_4_convertir_a_mayusculas</a>
+        <a href="js04_5_funcionFlecha/index.html">js04_5_funcionFlecha</a>
+        <a href="js05_1_location/index.html">js05_1_location</a>
+        <a href="js05_3_form_confirmacion/index.html">js05_3_form_confirmacion</a>
+        <a href="js05_4_traduccion/index.html">js05_4_traduccion</a>
+        <a href="js05_6_variables_objeto_dato/index.html">js05_6_variables_objeto_dato</a>
+        <a href="js06_validacionConKeyUp/index.html">js06_validacionConKeyUp</a>
+        <a href="js07_form_abm/index.html">js07_form_abm</a>
+        <a href="js09_creacion_objetos/index.html">js09_creacion_objetos</a>
+    </div>
+    <p class="volver"><a href="../index.html">Volver al índice principal</a></p>
+</main>
+
 </body>
 </html>

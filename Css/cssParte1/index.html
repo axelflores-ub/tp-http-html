@@ -4,25 +4,53 @@
 <meta charset="UTF-8">
 <title>cssParte1</title>
 <style>
-    body {
-        background-color: #eef4fc;
+    :root { --acento: #1d3557; --acento-claro: #cfe0fc; }
+    body { margin: 0; font-family: Arial, sans-serif; background-color: #ffffff; color: #222222; }
+    header { background-color: var(--acento); color: #ffffff; padding: 40px; }
+    header h1 { margin: 0 0 6px; font-size: 2.2em; }
+    header p { margin: 2px 0; opacity: 0.9; }
+    main { padding: 30px 40px; }
+    .grid { display: flex; flex-wrap: wrap; gap: 14px; }
+    .grid a {
+        display: block;
+        padding: 16px 20px;
+        background-color: var(--acento-claro);
+        color: var(--acento);
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 10px;
+        min-width: 200px;
+        text-align: center;
+        transition: transform 0.15s ease, background-color 0.15s ease, color 0.15s ease;
     }
+    .grid a:hover { background-color: var(--acento); color: #ffffff; transform: translateY(-3px); }
+    .volver { margin-top: 30px; }
+    .volver a { color: var(--acento); }
 </style>
 </head>
 <body>
-<h1>cssParte1</h1>
-<ol>
-    <li><a href="css01StyleEnHeader/index.html">css01StyleEnHeader</a></li>
-    <li><a href="css02SelectoresDeClase/index.html">css02SelectoresDeClase</a></li>
-    <li><a href="css03StyleEnFile/index.html">css03StyleEnFile</a></li>
-    <li><a href="css04FontSize/index.html">css04FontSize</a></li>
-    <li><a href="css07BackgroundFijo/index.html">css07BackgroundFijo</a></li>
-    <li><a href="css08CentradoYPadding/index.html">css08CentradoYPadding</a></li>
-    <li><a href="css10DivsEnPila/index.html">css10DivsEnPila</a></li>
-    <li><a href="css11DivsEnFila/index.html">css11DivsEnFila</a></li>
-    <li><a href="css14DivsInternosEnColumnas/index.html">css14DivsInternosEnColumnas</a></li>
-    <li><a href="css16SelectoresDeEvento/index.html">css16SelectoresDeEvento</a></li>
-</ol>
-<p><a href="../index.html">Volver al índice de Css</a></p>
+
+<header>
+    <h1>cssParte1</h1>
+    <p>Programación en ambiente de redes</p>
+    <p>Axel Flores</p>
+</header>
+
+<main>
+    <div class="grid">
+        <a href="css01StyleEnHeader/index.html">css01StyleEnHeader</a>
+        <a href="css02SelectoresDeClase/index.html">css02SelectoresDeClase</a>
+        <a href="css03StyleEnFile/index.html">css03StyleEnFile</a>
+        <a href="css04FontSize/index.html">css04FontSize</a>
+        <a href="css07BackgroundFijo/index.html">css07BackgroundFijo</a>
+        <a href="css08CentradoYPadding/index.html">css08CentradoYPadding</a>
+        <a href="css10DivsEnPila/index.html">css10DivsEnPila</a>
+        <a href="css11DivsEnFila/index.html">css11DivsEnFila</a>
+        <a href="css14DivsInternosEnColumnas/index.html">css14DivsInternosEnColumnas</a>
+        <a href="css16SelectoresDeEvento/index.html">css16SelectoresDeEvento</a>
+    </div>
+    <p class="volver"><a href="../index.html">Volver al índice de Css</a></p>
+</main>
+
 </body>
 </html>
