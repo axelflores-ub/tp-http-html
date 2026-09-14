@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Variable de tipo objeto de dato</title>
+<style>
+    body {
+        background-color: #ffffff;
+        color: #222222;
+        font-family: Arial, sans-serif;
+        padding: 20px;
+    }
+
+    .contenedores {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .caja {
+        border-radius: 8px;
+        padding: 16px;
+        box-sizing: border-box;
+    }
+
+    #ingreso {
+        background-color: #d4f7e0;
+        width: 320px;
+    }
+
+    #control {
+        background-color: #ffe8cc;
+        flex: 1;
+        min-width: 260px;
+    }
+
+    #contenedorPresentacion {
+        background-color: #ece3fb;
+        width: 100%;
+        margin-top: 20px;
+        display: none; /* arranca oculto */
+    }
+
+    .campo {
+        margin-bottom: 12px;
+    }
+    .campo label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 4px;
+    }
+    .campo input {
+        padding: 6px;
+        border: 1px solid #2d6a4f;
+        border-radius: 4px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    button {
+        padding: 10px 16px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #b06a1f;
+        background-color: #ffffff;
+        color: #b06a1f;
+        font-weight: bold;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #b06a1f;
+        color: #ffffff;
+    }
+
+    table {
+        border-collapse: collapse;
+        margin-top: 10px;
+    }
+    td {
+        border: 1px solid #6a4c93;
+        padding: 6px 10px;
+    }
+</style>
+</head>
+<body>
+
+<div class="contenedores">
+
+    <div class="caja" id="ingreso">
+        <h2>Ingreso de datos de persona</h2>
+
+        <div class="campo">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" required>
+        </div>
+
+        <div class="campo">
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" required>
+        </div>
+
+        <div class="campo">
+            <label for="fecha">Fecha de nacimiento:</label>
+            <input type="date" id="fecha" required>
+        </div>
+    </div>
+
+    <div class="caja" id="control">
+        <h2>Control</h2>
+        <button onclick="crearPersona()">Crear persona</button>
+        <button onclick="listarPersonas()">Listar personas</button>
+        <button onclick="ocultarPresentacion()">Ocultar presentación</button>
+    </div>
+
+</div>
+
+<div class="caja" id="contenedorPresentacion">
+    <h2>Presentación</h2>
+    <div id="presentacion"></div>
+</div>
+
+<script type="text/javascript">
+    // Array de objetos de dato, cargado por programa con 2 personas
+    let arregloPersonas = [
+        { nombre: "Mora", apellido: "Ibarra", fechaNac: "1990-05-03" },
+        { nombre: "Bruno", apellido: "Sosa", fechaNac: "1998-11-22" }
+    ];
+
+    function crearPersona() {
+        const campoNombre = document.getElementById('nombre');
+        const campoApellido = document.getElementById('apellido');
+        const campoFecha = document.getElementById('fecha');
+
+        // Validación previa: los 3 campos son obligatorios (required + checkValidity)
+        if (campoNombre.checkValidity() && campoApellido.checkValidity() && campoFecha.checkValidity()) {
+            arregloPersonas.push({
+                nombre: campoNombre.value,
+                apellido: campoApellido.value,
+                fechaNac: campoFecha.value
+            });
+            campoNombre.value = "";
+            campoApellido.value = "";
+            campoFecha.value = "";
+            alert("Persona agregada correctamente");
+        } else {
+            alert("Faltan completar campos obligatorios");
+        }
+    }
+
+    function listarPersonas() {
+        let texto = "<table>";
+        arregloPersonas.forEach(function (item, indice) {
+            texto += "<tr><td>" + item.nombre + "</td><td>" + item.apellido + "</td><td>" + item.fechaNac + "</td></tr>";
+        });
+        texto += "</table>";
+        texto += "<p>Longitud del arreglo de objetos: " + arregloPersonas.length + "</p>";
+
+        document.getElementById('presentacion').innerHTML = texto;
+        document.getElementById('contenedorPresentacion').style.display = "block";
+    }
+
+    function ocultarPresentacion() {
+        document.getElementById('contenedorPresentacion').style.display = "none";
+    }
+</script>
+
+</body>
+</html>

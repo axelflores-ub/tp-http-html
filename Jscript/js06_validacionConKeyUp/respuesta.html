@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Respuesta al formulario</title>
+<style>
+    body {
+        background-color: #eef4fc;
+        color: #222222;
+        font-family: Arial, sans-serif;
+        padding: 20px;
+    }
+</style>
+</head>
+<body>
+
+<h1>Respuesta al formulario</h1>
+<div id="datos"></div>
+
+<script type="text/javascript">
+    const parametros = new URLSearchParams(window.location.search);
+    const dia = parametros.get('diaDelMes') || '(sin dato)';
+    const mes = parametros.get('mes') || '(sin dato)';
+    document.getElementById('datos').innerHTML =
+        '<p>Día del mes recibido: ' + dia + '</p><p>Mes recibido: ' + mes + '</p>';
+</script>
+
+</body>
+</html>

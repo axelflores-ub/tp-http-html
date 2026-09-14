@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>js09_creacion_objetos</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #ffffff;
+        padding: 20px;
+    }
+    .botonera {
+        margin-bottom: 16px;
+    }
+    button {
+        padding: 8px 16px;
+        margin-right: 8px;
+        border: 1px solid #6a4c93;
+        background-color: #ece3fb;
+        color: #4a2f82;
+        font-weight: bold;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #6a4c93;
+        color: #ffffff;
+    }
+
+    /* El contenedor tiene un alto máximo: si entran pocos elementos no hay scroll,
+       si se pasa de ese alto aparece la barra de scroll vertical sola */
+    #contenedor {
+        max-width: 460px;
+        max-height: 320px;
+        overflow-y: auto;
+        background-color: #d4f7e0;
+        border: 2px solid #2d6a4f;
+        border-radius: 8px;
+        padding: 10px;
+    }
+
+    .item {
+        background-color: #ffffff;
+        border: 1px solid #2d6a4f;
+        border-radius: 6px;
+        padding: 12px;
+        margin-bottom: 8px;
+        font-weight: bold;
+        color: #1b4332;
+    }
+</style>
+</head>
+<body>
+
+<div class="botonera">
+    <button onclick="crear()">Crear</button>
+    <button onclick="limpiar()">Limpiar</button>
+    <button onclick="info()">Info</button>
+</div>
+
+<div id="contenedor"></div>
+
+<script type="text/javascript">
+    function crear() {
+        const contenedor = document.getElementById('contenedor');
+        const nuevoItem = document.createElement('div');
+        nuevoItem.className = 'item';
+        nuevoItem.innerHTML = 'Elemento creado: ' + (contenedor.childNodes.length + 1);
+        contenedor.appendChild(nuevoItem);
+    }
+
+    function limpiar() {
+        document.getElementById('contenedor').replaceChildren();
+    }
+
+    function info() {
+        const contenedor = document.getElementById('contenedor');
+        // Un alert por cada elemento creado: si hay 3 elementos, van a aparecer 3 alerts.
+        contenedor.childNodes.forEach(function (item, indice) {
+            alert('Elemento ' + (indice + 1) + ' de ' + contenedor.childNodes.length + ': "' + item.textContent + '"');
+        });
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>js07_form_abm</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #ffffff;
+        padding: 20px;
+    }
+    .formulario {
+        max-width: 420px;
+    }
+    h1 {
+        color: #4a2f82;
+    }
+    .panel {
+        background-color: #ece3fb;
+        padding: 20px;
+        border-radius: 8px 8px 0 0;
+    }
+    .campo {
+        margin-bottom: 14px;
+    }
+    .campo label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 4px;
+    }
+    .campo input {
+        padding: 6px;
+        border: 1px solid #6a4c93;
+        border-radius: 4px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .botonera {
+        background-color: #ffe8cc;
+        padding: 16px 20px;
+        border-radius: 0 0 8px 8px;
+    }
+    button {
+        padding: 10px 16px;
+        margin-right: 8px;
+        border: 1px solid #b06a1f;
+        background-color: #ffffff;
+        color: #b06a1f;
+        font-weight: bold;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+    button:hover:not(:disabled) {
+        background-color: #b06a1f;
+        color: #ffffff;
+    }
+    button:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+    }
+</style>
+</head>
+<body>
+
+<h1>Formulario ABM de productos</h1>
+
+<form class="formulario" id="miForm" target="_blank">
+    <div class="panel">
+        <div class="campo">
+            <label for="codigo">Código:</label>
+            <input type="text" id="codigo" name="codigo" required>
+        </div>
+        <div class="campo">
+            <label for="descripcion">Descripción:</label>
+            <input type="text" id="descripcion" name="descripcion" required>
+        </div>
+        <div class="campo">
+            <label for="precio">Precio (entre 1 y 99999):</label>
+            <input type="number" id="precio" name="precio" min="1" max="99999" required>
+        </div>
+    </div>
+
+    <div class="botonera">
+        <button type="reset">Blanquear</button>
+        <button type="submit" formaction="alta.html" formmethod="get" formtarget="_blank" id="btAlta" disabled>Alta</button>
+        <button type="submit" formaction="modi.html" formmethod="get" formtarget="_blank" id="btModi" disabled>Modi</button>
+        <button type="submit" formaction="baja.html" formmethod="get" formtarget="_blank" id="btBaja" disabled>Baja</button>
+    </div>
+</form>
+
+<script type="text/javascript">
+    const codigo = document.getElementById('codigo');
+    const descripcion = document.getElementById('descripcion');
+    const precio = document.getElementById('precio');
+    const botones = [document.getElementById('btAlta'), document.getElementById('btModi'), document.getElementById('btBaja')];
+
+    function validarTodo() {
+        const todoListo = codigo.checkValidity() && descripcion.checkValidity() && precio.checkValidity();
+        botones.forEach(function (boton) {
+            boton.disabled = !todoListo;
+        });
+    }
+
+    codigo.addEventListener('keyup', validarTodo);
+    descripcion.addEventListener('keyup', validarTodo);
+    precio.addEventListener('keyup', validarTodo);
+    precio.addEventListener('change', validarTodo);
+
+    document.getElementById('miForm').addEventListener('reset', function () {
+        setTimeout(validarTodo, 0); // espero a que el reset limpie los campos antes de revalidar
+    });
+</script>
+
+</body>
+</html>

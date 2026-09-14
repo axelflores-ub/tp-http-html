@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Taller de programación</title>
+<style>
+    body {
+        background-color: #eef4fc;
+        color: #1d3557;
+        font-family: Georgia, 'Times New Roman', serif;
+        padding: 60px 40px;
+    }
+    h1 {
+        font-size: 3em;
+        margin: 0;
+    }
+    h1 .destacado {
+        font-family: Arial, sans-serif;
+        font-size: 0.5em;
+        color: #6a4c93;
+        font-weight: normal;
+    }
+    p {
+        font-family: Arial, sans-serif;
+        font-size: 1.1em;
+        max-width: 500px;
+    }
+</style>
+</head>
+<body>
+
+<h1 id="titulo"></h1>
+<p id="bajada"></p>
+
+<script type="text/javascript">
+    // window.navigator.language devuelve el idioma default del navegador, por ejemplo "es-AR" o "en-US"
+    let idiomaCompleto = window.navigator.language;
+    let idioma = idiomaCompleto.substr(0, 2); // me quedo solo con los primeros 2 caracteres
+
+    if (idioma === "es") {
+        document.getElementById('titulo').innerHTML = 'Programá <span class="destacado">con confianza</span>';
+        document.getElementById('bajada').innerHTML = 'Este taller se armó pensando en quienes recién empiezan a programar.';
+    } else if (idioma === "en") {
+        document.getElementById('titulo').innerHTML = 'Code <span class="destacado">with confidence</span>';
+        document.getElementById('bajada').innerHTML = 'This workshop was built for people who are just getting started with programming.';
+    } else {
+        document.getElementById('titulo').innerHTML = 'Code <span class="destacado">with confidence</span>';
+        document.getElementById('bajada').innerHTML = 'Your browser language ("' + idiomaCompleto + '") isn\'t Spanish or English, so we show this in English by default.';
+    }
+</script>
+
+</body>
+</html>

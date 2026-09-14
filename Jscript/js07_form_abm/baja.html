@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Respuesta a la baja</title>
+<style>
+    body { background-color: #eef4fc; color: #222222; font-family: Arial, sans-serif; padding: 20px; }
+</style>
+</head>
+<body>
+<h1>Respuesta a la baja</h1>
+<div id="datos"></div>
+<script type="text/javascript">
+    const p = new URLSearchParams(window.location.search);
+    document.getElementById('datos').innerHTML =
+        '<p>Código: ' + p.get('codigo') + '</p><p>Descripción: ' + p.get('descripcion') + '</p><p>Precio: ' + p.get('precio') + '</p>';
+</script>
+</body>
+</html>

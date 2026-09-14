@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>js06_validacionConKeyUp</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #ffffff;
+    }
+    h1 {
+        background-color: #2d6a4f;
+        color: #ffffff;
+        padding: 16px;
+        margin: 0;
+    }
+    .panel {
+        background-color: #d4f7e0;
+        padding: 20px;
+    }
+    .campo {
+        margin-bottom: 14px;
+    }
+    .campo label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 4px;
+    }
+    .campo input {
+        padding: 6px;
+        border: 1px solid #2d6a4f;
+        border-radius: 4px;
+        width: 80px;
+    }
+    .botonera {
+        margin-top: 20px;
+    }
+    button {
+        padding: 10px 24px;
+        margin-right: 10px;
+        border: 1px solid #2d6a4f;
+        background-color: #ffffff;
+        color: #2d6a4f;
+        font-weight: bold;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #2d6a4f;
+        color: #ffffff;
+    }
+</style>
+</head>
+<body>
+
+<h1>Validación en vivo de un input, usando el evento keyup</h1>
+
+<form class="panel" action="respuesta.html" method="get">
+    <div class="campo">
+        <label for="dia">Ingresá el día del mes:</label>
+        <input type="number" id="dia" name="diaDelMes">
+    </div>
+
+    <div class="campo">
+        <label for="mes">Ingresá el mes:</label>
+        <input type="number" id="mes" name="mes">
+    </div>
+
+    <div class="botonera">
+        <button type="submit">Enviar</button>
+        <button type="reset">Reset</button>
+    </div>
+</form>
+
+<script type="text/javascript">
+    document.getElementById('dia').addEventListener('keyup', function () {
+        let valor = parseInt(this.value);
+        if (valor < 1 || valor > 31) {
+            alert('El día tiene que estar entre 1 y 31');
+        }
+    });
+
+    document.getElementById('mes').addEventListener('keyup', function () {
+        let valor = parseInt(this.value);
+        if (valor < 1 || valor > 12) {
+            alert('El mes tiene que estar entre 1 y 12');
+        }
+    });
+</script>
+
+</body>
+</html>
