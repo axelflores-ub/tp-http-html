@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tabla y formulario juntos</title>
+<style>
+    html, body {
+        height: 100%;
+        margin: 0;
+    }
+
+    body {
+        font-family: 'Trebuchet MS', Arial, sans-serif;
+        background-color: #eef7f1;
+        color: #2b2b2b;
+    }
+
+    /* ================= Contenedor principal (se activa / desactiva) ================= */
+    #contenedor {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        transition: opacity 0.25s ease;
+    }
+
+    .contenedorActivo {
+        opacity: 1;
+        pointer-events: auto;      /* activa todos los elementos sensibles a evento */
+    }
+
+    .contenedorPasivo {
+        opacity: 0.3;              /* transparencia */
+        pointer-events: none;      /* desactiva todos los elementos sensibles a evento */
+    }
+
+    .cabecera, footer.pie {
+        flex: 0 0 auto;
+        background-color: #e3dcf5;
+        color: #3d2b6b;
+    }
+
+    .cabecera {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 8px 12px 8px 24px;
+    }
+
+    .cabecera h1 {
+        flex: 1;
+        margin: 0;
+        font-size: 1.6rem;
+    }
+
+    .acciones {
+        display: flex;
+        gap: 8px;
+    }
+
+    .acciones button {
+        padding: 20px 26px;
+        font-size: 1.05rem;
+        font-weight: bold;
+        background-color: #cfe8d8;
+        color: #1f5a3a;
+        border: 1px solid #3c8c63;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    .acciones button:hover {
+        background-color: #3c8c63;
+        color: #ffffff;
+    }
+
+    footer.pie {
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.2rem;
+        padding: 14px 10px;
+    }
+
+    /* ================= Tabla: solo el tbody tiene scroll ================= */
+    table {
+        --columnas: 1.2fr 0.8fr 2.6fr 1.2fr 1.1fr;
+        flex: 1 1 auto;
+        min-height: 0;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    thead, tfoot {
+        display: block;
+        flex: 0 0 auto;
+        overflow-y: hidden;
+        scrollbar-gutter: stable;   /* reserva el ancho de la barra de scroll del tbody */
+        background-color: #ffd9c7;
+        color: #6b3519;
+    }
+
+    tbody {
+        display: block;
+        flex: 1 1 auto;
+        min-height: 0;
+        overflow-y: auto;
+        scrollbar-gutter: stable;
+        background-color: #f6f3fb;
+    }
+
+    tbody:empty::before {
+        content: "Sin datos. Usá «Cargar datos» o «Agregar libro».";
+        display: block;
+        padding: 24px 16px;
+        color: #7a7390;
+    }
+
+    tr {
+        display: grid;
+        grid-template-columns: var(--columnas);
+    }
+
+    th, td {
+        padding: 18px 10px;
+        text-align: left;
+        overflow-wrap: break-word;
+    }
+
+    th {
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        font-size: 0.9rem;
+    }
+
+    tbody tr:nth-child(odd)  { background-color: #ffffff; }
+    tbody tr:nth-child(even) { background-color: #f1ecfa; }
+
+    tfoot td {
+        padding: 12px 10px;
+        font-weight: bold;
+    }
+
+    /* La fila recién agregada se resalta y vuelve sola a su color */
+    .filaNueva {
+        animation: resalta 2s ease-out;
+    }
+
+    @keyframes resalta {
+        from { background-color: #fff3a8; }
+    }
+
+    /* ================= Ventana modal (prendida / apagada) ================= */
+    #ventanaModal {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 16px;
+        box-sizing: border-box;
+        z-index: 10;
+    }
+
+    .ventanaModalApagado {
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.25s ease, visibility 0s linear 0.25s;
+    }
+
+    .ventanaModalPrendido {
+        visibility: visible;
+        opacity: 1;
+        transition: opacity 0.25s ease, visibility 0s;
+    }
+
+    .modalCaja {
+        width: min(900px, 100%);
+        max-height: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 14px 44px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+    }
+
+    .modalCabecera, .modalPie {
+        flex: 0 0 auto;
+        background-color: #e3dcf5;
+        color: #3d2b6b;
+    }
+
+    .modalCabecera {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 16px 12px 24px;
+    }
+
+    .modalCabecera h2 {
+        margin: 0;
+        font-size: 1.25rem;
+    }
+
+    #btCierraModal {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        color: #b3261e;
+        background-color: #ffffff;
+        border: 1px solid #b3261e;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    #btCierraModal:hover {
+        background-color: #b3261e;
+        color: #ffffff;
+    }
+
+    .modalPie {
+        text-align: center;
+        font-weight: bold;
+        padding: 10px;
+    }
+
+    .modalCuerpo {
+        flex: 1;
+        min-height: 0;
+        overflow-y: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 22px 40px;
+        padding: 26px 32px;
+        background-color: #eef7f1;
+    }
+
+    .campo {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    .campo label {
+        font-weight: bold;
+        margin-bottom: 6px;
+    }
+
+    .campo input, .campo select {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 12px;
+        font-size: 1rem;
+        border: 1px solid #8a7bb8;
+        border-radius: 8px;
+        background-color: #ffffff;
+    }
+
+    .campo input:focus, .campo select:focus {
+        outline: 3px solid #cdbff0;
+        border-color: #6a4c93;
+    }
+
+    .campo button {
+        width: 100%;
+        padding: 14px;
+        font-size: 1.05rem;
+        font-weight: bold;
+        background-color: #cfe8d8;
+        color: #1f5a3a;
+        border: 1px solid #3c8c63;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    .campo button:hover {
+        background-color: #3c8c63;
+        color: #ffffff;
+    }
+
+    /* ================= Pantallas angostas ================= */
+    @media (max-width: 700px) {
+        table { --columnas: 1.25fr 0.7fr 2fr 1.3fr 1.1fr; }
+        .cabecera { padding: 8px 8px 8px 12px; }
+        .cabecera h1 { font-size: 1.2rem; }
+        .acciones button { padding: 14px 10px; font-size: 0.8rem; }
+        th, td { padding: 12px 4px; font-size: 0.8rem; }
+        th { font-size: 0.66rem; letter-spacing: 0; }
+        tfoot td { font-size: 0.75rem; }
+        .modalCuerpo { grid-template-columns: 1fr; padding: 20px; }
+    }
+</style>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="../generos.js"></script>
+<script src="../libros.js"></script>
+<script src="app.js"></script>
+</head>
+<body>
+
+<!-- Contenedor principal: tabla + botones. Se desactiva mientras el modal está abierto -->
+<div id="contenedor" class="contenedorActivo">
+
+    <header class="cabecera">
+        <h1>Libros</h1>
+        <div class="acciones">
+            <button type="button" id="btCargar">Cargar datos</button>
+            <button type="button" id="btVaciar">Vaciar datos</button>
+            <button type="button" id="btAgregar">Agregar libro</button>
+        </div>
+    </header>
+
+    <table role="table" aria-label="Listado de libros">
+        <thead role="rowgroup">
+            <tr role="row">
+                <th role="columnheader">Código</th>
+                <th role="columnheader">Género</th>
+                <th role="columnheader">Título</th>
+                <th role="columnheader">Fecha de alta</th>
+                <th role="columnheader">Ejemplares</th>
+            </tr>
+        </thead>
+        <tbody id="tbDatos" role="rowgroup"></tbody>
+        <tfoot role="rowgroup">
+            <tr role="row">
+                <td role="cell" id="sumCantidad"></td>
+                <td role="cell"></td>
+                <td role="cell"></td>
+                <td role="cell"></td>
+                <td role="cell" id="sumEjemplares"></td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <footer class="pie">Pie</footer>
+
+</div>
+
+<!-- Ventana modal con el formulario de alta: arranca apagada -->
+<div id="ventanaModal" class="ventanaModalApagado" role="dialog" aria-modal="true" aria-labelledby="tituloModal">
+    <div class="modalCaja">
+
+        <header class="modalCabecera">
+            <h2 id="tituloModal">Formulario para ALTA · Maestro de Libros</h2>
+            <button type="button" id="btCierraModal" aria-label="Cerrar la ventana">X</button>
+        </header>
+
+        <form id="formLibro" class="modalCuerpo">
+            <div class="campo">
+                <label for="codLibro">Código de libro:</label>
+                <input type="text" id="codLibro" name="codLibro" maxlength="12" placeholder="Ej: LIB-0016" required>
+            </div>
+
+            <div class="campo">
+                <label for="selectGenero">Género:</label>
+                <select id="selectGenero" name="genero" required>
+                    <!-- Las opciones se crean desde JavaScript a partir del JSON de géneros -->
+                </select>
+            </div>
+
+            <div class="campo">
+                <label for="titulo">Título:</label>
+                <input type="text" id="titulo" name="titulo" required>
+            </div>
+
+            <div class="campo">
+                <label for="fechaAlta">Fecha de alta:</label>
+                <input type="date" id="fechaAlta" name="fechaAlta" required>
+            </div>
+
+            <div class="campo">
+                <label for="ejemplares">Ejemplares disponibles:</label>
+                <input type="number" id="ejemplares" name="ejemplares" min="0" value="0" required>
+            </div>
+
+            <div class="campo">
+                <button type="submit">ENVIAR</button>
+            </div>
+        </form>
+
+        <footer class="modalPie">Pie del formulario</footer>
+
+    </div>
+</div>
+
+</body>
+</html>

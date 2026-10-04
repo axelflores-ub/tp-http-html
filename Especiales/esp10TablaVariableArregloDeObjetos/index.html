@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tabla de libros</title>
+<style>
+    html, body {
+        height: 100%;
+        margin: 0;
+    }
+
+    body {
+        font-family: 'Trebuchet MS', Arial, sans-serif;
+        background-color: #eef7f1;
+        color: #2b2b2b;
+    }
+
+    /* Contenedor general: 100% del alto del viewport, sin scroll de página */
+    #contenedor {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cabecera, footer {
+        flex: 0 0 auto;
+        background-color: #e3dcf5;
+        color: #3d2b6b;
+    }
+
+    .cabecera {
+        display: flex;
+        align-items: center;
+        padding: 8px 10px 8px 0;
+    }
+
+    .cabecera h1 {
+        flex: 1;
+        margin: 0;
+        text-align: center;
+        font-size: 1.6rem;
+    }
+
+    .acciones {
+        display: flex;
+        gap: 8px;
+    }
+
+    .acciones button {
+        padding: 22px 30px;
+        font-size: 1.05rem;
+        font-weight: bold;
+        background-color: #cfe8d8;
+        color: #1f5a3a;
+        border: 1px solid #3c8c63;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    .acciones button:hover {
+        background-color: #3c8c63;
+        color: #ffffff;
+    }
+
+    footer {
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.2rem;
+        padding: 14px 10px;
+    }
+
+    /* Tabla: el encabezado y la fila de totales quedan fijos; solo el tbody tiene scroll.
+       Cada fila es una grilla con las mismas columnas, así quedan alineadas. */
+    table {
+        --columnas: 1.2fr 0.8fr 2.6fr 1.2fr 1.1fr;
+        flex: 1 1 auto;
+        min-height: 0;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    thead, tfoot {
+        display: block;
+        flex: 0 0 auto;
+        overflow-y: hidden;
+        scrollbar-gutter: stable;   /* reserva el mismo ancho que la barra de scroll del tbody */
+        background-color: #ffd9c7;
+        color: #6b3519;
+    }
+
+    tbody {
+        display: block;
+        flex: 1 1 auto;
+        min-height: 0;
+        overflow-y: auto;
+        scrollbar-gutter: stable;
+        background-color: #f6f3fb;
+    }
+
+    tbody:empty::before {
+        content: "Sin datos. Usá el botón «Cargar datos».";
+        display: block;
+        padding: 24px 16px;
+        color: #7a7390;
+    }
+
+    tr {
+        display: grid;
+        grid-template-columns: var(--columnas);
+    }
+
+    th, td {
+        padding: 18px 10px;
+        text-align: left;
+        overflow-wrap: break-word;
+    }
+
+    th {
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        font-size: 0.9rem;
+    }
+
+    tbody tr:nth-child(odd)  { background-color: #ffffff; }
+    tbody tr:nth-child(even) { background-color: #f1ecfa; }
+
+    tfoot td {
+        padding: 12px 10px;
+        font-weight: bold;
+    }
+
+    @media (max-width: 700px) {
+        table { --columnas: 1.25fr 0.7fr 2fr 1.3fr 1.1fr; }
+        .cabecera h1 { font-size: 1.2rem; }
+        .acciones button { padding: 14px 12px; font-size: 0.85rem; }
+        th, td { padding: 12px 4px; font-size: 0.8rem; }
+        th { font-size: 0.66rem; letter-spacing: 0; }
+        tfoot td { font-size: 0.75rem; }
+    }
+</style>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="../generos.js"></script>
+<script src="../libros.js"></script>
+<script src="tabla.js"></script>
+</head>
+<body>
+
+<div id="contenedor">
+
+    <header class="cabecera">
+        <h1>Libros</h1>
+        <div class="acciones">
+            <button type="button" id="btCargar">Cargar datos</button>
+            <button type="button" id="btVaciar">Vaciar datos</button>
+        </div>
+    </header>
+
+    <table role="table" aria-label="Listado de libros">
+        <thead role="rowgroup">
+            <tr role="row">
+                <th role="columnheader">Código</th>
+                <th role="columnheader">Género</th>
+                <th role="columnheader">Título</th>
+                <th role="columnheader">Fecha de alta</th>
+                <th role="columnheader">Ejemplares</th>
+            </tr>
+        </thead>
+        <tbody id="tbDatos" role="rowgroup"></tbody>
+        <tfoot role="rowgroup">
+            <tr role="row">
+                <td role="cell" id="sumCantidad"></td>
+                <td role="cell"></td>
+                <td role="cell"></td>
+                <td role="cell"></td>
+                <td role="cell" id="sumEjemplares"></td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <footer>Pie</footer>
+
+</div>
+
+</body>
+</html>
