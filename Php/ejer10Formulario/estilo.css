@@ -1,0 +1,236 @@
+:root {
+    --acento: #00695c;
+    --acento-claro: #d6f0ea;
+    --nota: #e3dcf5;
+    --nota-texto: #3d2b6b;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    line-height: 1.55;
+    background-color: #f4faf8;
+    color: #1f2d2a;
+}
+
+header.portada {
+    background-color: var(--acento);
+    color: #ffffff;
+    padding: 30px 40px;
+}
+
+header.portada h1 {
+    margin: 0 0 4px;
+    font-size: 2.1rem;
+}
+
+header.portada p {
+    margin: 0;
+    opacity: 0.9;
+}
+
+main {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 24px 20px 60px;
+}
+
+/* Cada tema va en su propia tarjeta */
+section.tarjeta {
+    background-color: #ffffff;
+    border-left: 6px solid var(--acento);
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    padding: 18px 26px 12px;
+    margin-bottom: 20px;
+}
+
+section.tarjeta h2 {
+    margin: 0 0 12px;
+    font-size: 1.25rem;
+    color: var(--acento);
+}
+
+section.tarjeta h3 {
+    margin: 16px 0 6px;
+    font-size: 1.05rem;
+}
+
+section.tarjeta p {
+    margin: 6px 0;
+}
+
+/* Nombres de variables y constantes */
+.var {
+    font-family: Consolas, 'Courier New', monospace;
+    font-weight: bold;
+    color: #1a3fa8;
+    background-color: #eaf0ff;
+    padding: 1px 6px;
+    border-radius: 4px;
+}
+
+code {
+    font-family: Consolas, 'Courier New', monospace;
+    background-color: #eef2f1;
+    padding: 1px 6px;
+    border-radius: 4px;
+}
+
+/* Cuadros de aclaración */
+.nota {
+    background-color: var(--nota);
+    color: var(--nota-texto);
+    border-radius: 8px;
+    padding: 10px 16px;
+    margin: 12px 0;
+    text-align: center;
+    font-size: 1.05rem;
+}
+
+/* Salida línea por línea del arreglo asociativo */
+.salida {
+    background-color: #f1f7f5;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-family: Consolas, 'Courier New', monospace;
+    font-size: 0.95rem;
+}
+
+/* Tabla del arreglo de dos dimensiones */
+table.catalogo {
+    border-collapse: collapse;
+    margin: 10px 0;
+}
+
+table.catalogo th,
+table.catalogo td {
+    border: 1px solid #7fb8ad;
+    padding: 7px 14px;
+    text-align: left;
+}
+
+table.catalogo th {
+    background-color: #bfe5dc;
+}
+
+table.catalogo td {
+    background-color: #eaf7f4;
+}
+
+.volver {
+    margin-top: 30px;
+}
+
+.volver a {
+    color: var(--acento);
+}
+
+/* ===== Formulario ===== */
+form.alta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 28px;
+    margin-top: 14px;
+}
+
+form.alta .campo {
+    display: flex;
+    flex-direction: column;
+}
+
+form.alta .campo.ancho {
+    grid-column: 1 / -1;
+}
+
+form.alta label {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+form.alta input,
+form.alta select {
+    padding: 10px 12px;
+    font-size: 1rem;
+    border: 1px solid #7fb8ad;
+    border-radius: 8px;
+    background-color: #ffffff;
+    font-family: inherit;
+}
+
+form.alta input:focus,
+form.alta select:focus {
+    outline: 3px solid #bfe5dc;
+    border-color: var(--acento);
+}
+
+.boton {
+    display: inline-block;
+    padding: 12px 26px;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: inherit;
+    background-color: var(--acento-claro);
+    color: var(--acento);
+    border: 1px solid var(--acento);
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.boton:hover {
+    background-color: var(--acento);
+    color: #ffffff;
+}
+
+/* ===== Respuesta ===== */
+table.recibido {
+    border-collapse: collapse;
+    margin: 10px 0;
+}
+
+table.recibido th,
+table.recibido td {
+    border: 1px solid #7fb8ad;
+    padding: 7px 14px;
+    text-align: left;
+}
+
+table.recibido th {
+    background-color: #bfe5dc;
+    font-family: Consolas, 'Courier New', monospace;
+    font-size: 0.92rem;
+}
+
+table.recibido td {
+    background-color: #eaf7f4;
+}
+
+.errores {
+    background-color: #fff4d6;
+    border-left: 4px solid #e0a100;
+    color: #5c4300;
+    border-radius: 6px;
+    padding: 8px 18px;
+    margin: 10px 0;
+}
+
+.errores ul {
+    margin: 6px 0;
+    padding-left: 20px;
+}
+
+.exito {
+    background-color: #e3f6ec;
+    border-left: 4px solid #2e9e63;
+    color: #14532d;
+    border-radius: 6px;
+    padding: 8px 14px;
+    margin: 8px 0;
+}
+
+@media (max-width: 700px) {
+    form.alta {
+        grid-template-columns: 1fr;
+    }
+}

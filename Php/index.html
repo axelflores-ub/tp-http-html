@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Php</title>
+<style>
+    :root { --acento: #00695c; --acento-claro: #d6f0ea; }
+    body { margin: 0; font-family: Arial, sans-serif; background-color: #ffffff; color: #222222; }
+    header { background-color: var(--acento); color: #ffffff; padding: 40px; }
+    header h1 { margin: 0 0 6px; font-size: 2.2em; }
+    header p { margin: 2px 0; opacity: 0.9; }
+    main { padding: 30px 40px; }
+    .grid { display: flex; flex-wrap: wrap; gap: 14px; }
+    .grid a {
+        display: block;
+        padding: 16px 20px;
+        background-color: var(--acento-claro);
+        color: var(--acento);
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 10px;
+        min-width: 220px;
+        text-align: center;
+        transition: transform 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+    }
+    .grid a:hover { background-color: var(--acento); color: #ffffff; transform: translateY(-3px); }
+    .volver { margin-top: 30px; }
+    .volver a { color: var(--acento); }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Ejercicios de PHP</h1>
+    <p>Programación en ambiente de redes</p>
+    <p>Axel Flores</p>
+</header>
+
+<main>
+    <div class="grid">
+        <a href="ejer01Base/index.php">ejer01Base</a>
+        <a href="ejer02inc/index.php">ejer02inc</a>
+        <a href="ejer05MuestraVariablesServidor/index.php">ejer05MuestraVariablesServidor</a>
+        <a href="ejer06VariablesObjeto/index.php">ejer06VariablesObjeto</a>
+        <a href="ejer10Formulario/index.php">ejer10Formulario</a>
+        <a href="ejer24DBListaOrdenaFiltra/index.php">ejer24DBListaOrdenaFiltra</a>
+    </div>
+    <p class="volver"><a href="../index.html">Volver al índice principal</a></p>
+</main>
+
+</body>
+</html>

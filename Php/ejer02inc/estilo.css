@@ -1,0 +1,170 @@
+:root {
+    --acento: #00695c;
+    --acento-claro: #d6f0ea;
+    --nota: #e3dcf5;
+    --nota-texto: #3d2b6b;
+    --aviso: #fff4d6;
+    --aviso-borde: #e0a100;
+    --aviso-texto: #5c4300;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    line-height: 1.55;
+    background-color: #f4faf8;
+    color: #1f2d2a;
+}
+
+header.portada {
+    background-color: var(--acento);
+    color: #ffffff;
+    padding: 30px 40px;
+}
+
+header.portada h1 {
+    margin: 0 0 4px;
+    font-size: 2.1rem;
+}
+
+header.portada p {
+    margin: 0;
+    opacity: 0.9;
+}
+
+main {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 24px 20px 60px;
+}
+
+/* Cada paso de la ejecución va en su propia tarjeta */
+section.tarjeta {
+    background-color: #ffffff;
+    border-left: 6px solid var(--acento);
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    padding: 18px 26px 14px;
+    margin-bottom: 20px;
+}
+
+section.tarjeta h2 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 12px;
+    font-size: 1.25rem;
+    color: var(--acento);
+}
+
+section.tarjeta h3 {
+    margin: 16px 0 6px;
+    font-size: 1.05rem;
+}
+
+section.tarjeta p {
+    margin: 6px 0;
+}
+
+/* Círculo con el número de paso */
+.paso {
+    flex: 0 0 auto;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background-color: var(--acento);
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+}
+
+.var {
+    font-family: Consolas, 'Courier New', monospace;
+    font-weight: bold;
+    color: #1a3fa8;
+    background-color: #eaf0ff;
+    padding: 1px 6px;
+    border-radius: 4px;
+}
+
+code {
+    font-family: Consolas, 'Courier New', monospace;
+    background-color: #eef2f1;
+    padding: 1px 6px;
+    border-radius: 4px;
+}
+
+.nota {
+    background-color: var(--nota);
+    color: var(--nota-texto);
+    border-radius: 8px;
+    padding: 10px 16px;
+    margin: 12px 0;
+    text-align: center;
+}
+
+/* Lo que PHP intenta hacer, y la advertencia que devuelve */
+.intento {
+    margin: 12px 0 3px;
+    font-weight: 600;
+}
+
+.advertencia {
+    background-color: var(--aviso);
+    border-left: 4px solid var(--aviso-borde);
+    color: var(--aviso-texto);
+    border-radius: 6px;
+    padding: 5px 12px;
+    margin: 3px 0 3px 18px;
+    font-family: Consolas, 'Courier New', monospace;
+    font-size: 0.88rem;
+}
+
+.advertencia .linea {
+    opacity: 0.7;
+}
+
+/* Resultado correcto */
+.exito {
+    background-color: #e3f6ec;
+    border-left: 4px solid #2e9e63;
+    color: #14532d;
+    border-radius: 6px;
+    padding: 8px 14px;
+    margin: 8px 0;
+}
+
+table.empleados,
+table.comparativa {
+    border-collapse: collapse;
+    margin: 10px 0;
+}
+
+table.empleados th,
+table.empleados td,
+table.comparativa th,
+table.comparativa td {
+    border: 1px solid #7fb8ad;
+    padding: 7px 14px;
+    text-align: left;
+}
+
+table.empleados th,
+table.comparativa th {
+    background-color: #bfe5dc;
+}
+
+table.empleados td,
+table.comparativa td {
+    background-color: #eaf7f4;
+}
+
+.volver {
+    margin-top: 30px;
+}
+
+.volver a {
+    color: var(--acento);
+}
